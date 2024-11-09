@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'PingFang-Medium';
+    src: url('~/assets/fonts/PingFangSemibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PingFang-Regular';
+    src: url('~/assets/fonts/PingFangRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bg1 {
+    background: url("~/assets/img/bg1.png");
+}
+
+.bg2 {
+    background-image: url("~/assets/img/bg2.png");
+}
+
+.bg3 {
+    background-image: url("~/assets/img/bg3.png");
+}
+
+.keywords {
+    color: #0099FF;
+}
+
+.redKeywords {
+    color: #FD0D0D;
+}
+
+.PingFangMedium {
+    font-family: PingFang-Medium;
+}
+
+.PingFangRegular {
+    font-family: PingFang-Regular;
+}
