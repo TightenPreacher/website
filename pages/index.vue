@@ -4,7 +4,7 @@
             <Header @handleChangeTab="handleChangeTab" />
             <Home v-if="tabName === 'home'" />
             <Product v-if="tabName === 'product'" />
-            <News v-if="tabName === 'news'" />
+            <MyNews v-if="tabName === 'news'" />
             <About v-if="tabName === 'about'" />
             <Contact v-if="tabName === 'contactUs'" />
             <Footer />
