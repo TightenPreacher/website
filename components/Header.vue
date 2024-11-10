@@ -1,11 +1,15 @@
 <template>
-    <div class="flex justify-between h-[3.34vw] sticky top-0 stickyNavbar z-50">
-          <div>logo</div>
-          <div class="flex">
+    <div class="flex justify-between">
+          <img class="h-[4.01vw] w-[10.52vw] mt-[2.86vw]" src="~/assets/img/logo.png" alt="姬器人科技" srcset="">
+          <div class="flex h-[1.04vw] mt-[3.85vw] text-[0.94vw]">
             <div class="flex">
-              <div v-for="(item) in tabList" :key="item.key" @click="handleChangeTab(item.key)">{{ item.name }}</div>
+              <div v-for="(item) in tabList" :key="item.key" @click="handleChangeTab(item.key)"
+                :class="tabName === item.key ? ' h-[1.73vw] text-black font-semibold active':''" class="cursor-pointer mr-[2.65vw] text-[#1F1F1F] font-normal relative"
+              >
+                {{ item.name }}
+              </div>
             </div>
-            <div>中文 ｜ EN</div>
+            <div class="">中文 ｜ EN</div>
           </div>
     </div>
 </template>
@@ -31,27 +35,12 @@ const handleChangeTab = (val: string) => {
 </script>
 
 <style scoped>
-.stickyNavbar {
-    background: #fff;
-
-    .navbar {
-        min-height: 3.34vw!important;
-        padding-top: 0!important;
-        padding-bottom: 0!important;
-        .logo {
-            color: #3A3D3C;
-        }
-        .btn-Md {
-            color: #fff;
-            height: 1.88vw!important;
-            min-height: 1.88vw!important
-        }
-        .btn-Md:hover {
-          --tw-border-opacity: 1;
-          border-color: #00AF75;
-          --tw-bg-opacity: 1;
-          background-color: #00AF75;
-      }
-    }
+.active::after {
+  content: '';
+  display: block;
+  width: 1.1vw; 
+  border-bottom: 0.17vw solid black;
+  margin: 0 auto;
+  margin-top: 0.4vw;
 }
 </style>
