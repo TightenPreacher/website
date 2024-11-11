@@ -6,7 +6,7 @@
             <Product v-if="tabName === 'product'" />
             <MyNews v-if="tabName === 'news'" />
             <About v-if="tabName === 'about'" />
-            <Contact v-if="tabName === 'contactUs'" />
+            <ContactUs v-if="tabName === 'contactUs'" />
             <Footer />
         </div>
     </div>
