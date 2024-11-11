@@ -1,9 +1,9 @@
 <template>
     <div class="w-full pt-[2.08vw]">
         <div v-for="(item, index) in newList" :key="index" class="mb-[3.65vw]">
-            <div class="relative">
+            <div class="relative rounded-[1.04vw] overflow-hidden">
                 <img class="w-full" :src="item.pic" alt="新闻">
-                <div class="bg-[#010406] h-[6.15vw] w-[6.77vw] absolute right-0 bottom-0 z-10 text-white text-center pt-[1.09vw] pl-[0.63vw]">
+                <div class="bg-[#010406] h-[6.15vw] w-[6.77vw] absolute right-0 bottom-0 z-10 text-white text-center pt-[1.09vw] pl-[0.63vw] rounded-tl-[1.04vw]">
                     <div class="font-semibold h-[2.34vw] text-[1.67vw] w-[6.15vw]">{{ item.time1 }}</div>
                     <div class="font-normal h-[1.46vw] text-[1.04vw] w-[6.15vw]">{{ item.time2 }}</div>
                 </div>
