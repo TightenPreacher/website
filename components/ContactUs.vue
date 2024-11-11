@@ -1,11 +1,11 @@
 <template>
-    <div class="carousel-item h-[48.1vw] bg1 w-full">
-        <ContactUs />
+    <div class="flex flex-col carousel-item w-full">
+        <Contact />
     </div>
 </template>
 
 <script setup lang="ts">
-import ContactUs from '@/components/Contact/ContactUs.vue'
+import Contact from '~/components/Contact/Contact.vue'
 
 </script>
 
