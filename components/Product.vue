@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel-item h-[48.1vw] bg1 w-full">
+    <div class="carousel-item w-full">
         <Mod />
     </div>
 </template>
