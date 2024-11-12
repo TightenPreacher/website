@@ -3,7 +3,7 @@
         <AboutUs />
         <ExMaschine />
         <Team />
-        <Achievements />
+        <!-- <Achievements /> -->
     </div>
 </template>
 
@@ -11,7 +11,7 @@
 import AboutUs from '@/components/About/AboutUs.vue'
 import Team from '@/components/About/Team.vue'
 import ExMaschine from '@/components/Home/ExMaschine.vue'
-import Achievements from '@/components/About/Achievements.vue'
+// import Achievements from '@/components/About/Achievements.vue'
 
 </script>
 
