@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-for="(item, index) in modList" :key="index" class="h-[46.88vw] pt-[5.2vw]">
-            <div class=" font-semibold text-black leading-[1.98vw] text-[1.67vw]" :class="index === 0 ? 'text-left' : 'text-right'">{{ item.title }}</div>
+            <div class="font-semibold text-black leading-[1.98vw] text-[1.67vw]" :class="index === 0 ? 'text-left' : 'text-right'">{{ item.title }}</div>
             <div class="text-[1.04vw] text-[#1F1F1F] mt-[1.56vw]">{{ item.content }}</div>
             <div class="flex justify-between mt-[2.6vw]">
                 <div class="text-center" v-for="(val, index) in item.list" :key="index">
