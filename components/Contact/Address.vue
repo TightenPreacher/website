@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[40.09vw] pt-[0.94vw] flex flex-col">
+    <div class="h-[46.88vw] pt-[0.94vw] flex flex-col">
         <div v-for="(item, index) in addressList" :key="index" class="mt-[6.77vw]">
             <div class="flex items-center justify-between">
                 <div class="h-[3.07vw] text-[2.19vw] leading-[2.55vw] font-semibold text-[#030303]">{{ item.title }}</div>

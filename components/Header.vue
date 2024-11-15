@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between">
+    <div class="absolute top-0 left-1/2 -translate-x-2/4 w-[62.5vw] flex justify-between z-20">
           <img class="h-[4.01vw] w-[10.52vw] mt-[2.86vw]" src="~/assets/img/logo.png" alt="姬器人科技" srcset="">
           <div class="flex h-[1.04vw] mt-[3.85vw] text-[0.94vw]">
             <div class="flex">

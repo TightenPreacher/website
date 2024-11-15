@@ -4,7 +4,7 @@
             {{ modelNmae }}
         </div>
         <div class="flex flex-col">
-            <div class=" bg-[#37383A] w-[49.06vw] h-[27.71vw]"></div>
+            <img class="h-[27.71vw] w-[49.06vw]" :src="modelList[modelKey].pic" alt="姬器人科技" srcset="">
             <div class="h-[3.13vw] mt-[3.13vw] flex items-center justify-between">
                 <div class="flex text-[1.15vw] h-[1.88vw] text-[#8E8E8E]">
                     <div v-for="(item, index) in modelList" :key="item.key" 
@@ -16,8 +16,10 @@
                     </div>
                 </div>
                 <div class="flex justify-between w-[9.9vw]">
-                    <img @click="handleChange('left')" class="h-[3.13vw] w-[3.13vw] cursor-pointer" src="~/assets/img/btnLeft.png" alt="左" srcset="">
-                    <img @click="handleChange('right')" class="h-[3.13vw] w-[3.13vw] cursor-pointer" src="~/assets/img/btnRight.png" alt="右" srcset="">
+                    <img v-if="modelKey !== 0" @click="handleChange('left')" class="h-[3.13vw] w-[3.13vw] cursor-pointer" src="~/assets/img/btnLeft.png" alt="左" srcset="">
+                    <img v-if="modelKey === 0" class="h-[3.13vw] w-[3.13vw] cursor-not-allowed" src="~/assets/img/btnLeft2.png" alt="左" srcset="">
+                    <img v-if="modelKey !== 3" @click="handleChange('right')" class="h-[3.13vw] w-[3.13vw] cursor-pointer" src="~/assets/img/btnRight.png" alt="右" srcset="">
+                    <img v-if="modelKey === 3" class="h-[3.13vw] w-[3.13vw] cursor-not-allowed" src="~/assets/img/btnRight3.png" alt="右" srcset="">
                 </div>
             </div>
         </div>
@@ -27,13 +29,18 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
 
+import mod1 from '@/assets/img/mod1.png'
+import mod2 from '@/assets/img/mod2.png'
+import mod3 from '@/assets/img/mod3.png'
+import mod4 from '@/assets/img/mod4.png'
+
 const modelNmae = ref('世界模型')
 const modelKey = ref(0)
 const modelList = ref([
-    {name: '世界模型', key: 0},
-    {name: '俱身穿戴', key: 1},
-    {name: '仿人技能', key: 2},
-    {name: '类脑智能', key: 3},
+    {name: '世界模型', key: 0, pic: mod1},
+    {name: '俱身穿戴', key: 1, pic: mod2},
+    {name: '仿人技能', key: 2, pic: mod3},
+    {name: '类脑智能', key: 3, pic: mod4},
 ])
 
 const handleChangeModel = (index: number) => {

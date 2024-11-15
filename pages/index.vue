@@ -1,6 +1,7 @@
 <template>
     <div class="overflow-hidden overflow-y-auto relative h-[100vh]">
-        <div id="mains" class="my-0 mx-auto w-[62.5vw]">
+        <div id="mains" class="my-0 mx-auto w-full relative">
+            <!-- <div id="mains" class="my-0 mx-auto w-[62.5vw]"> -->
             <Header @handleChangeTab="handleChangeTab" />
             <Home v-if="tabName === 'home'" />
             <Product v-if="tabName === 'product'" />

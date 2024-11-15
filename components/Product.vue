@@ -1,10 +1,10 @@
 <template>
     <div class="carousel-item w-full flex flex-col">
-        <!-- <Mod /> -->
-         <World />
+        <Mod />
+         <!-- <World />
          <Skill />
          <Robot />
-         <System />
+         <System /> -->
     </div>
 </template>
 
