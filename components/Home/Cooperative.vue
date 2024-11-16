@@ -1,32 +1,36 @@
 <template>
-    <div class="flex flex-col pt-[5.21vw] h-[46.88vw]">
-        <div class="w-full flex justify-between leading-[2.55vw] h-[3.07vw] text-[2.19vw] font-semibold">
-            <div class="text-[#16212A]">合作单位</div>
-            <div class="text-[#EBEBEB]">Cooperative units</div>
-        </div>
-        <div class="mt-[2.6vw] w-full h-[32.08vw] pt-[3.13vw] pb-[2.5vw] px-[4.17vw] bg-white flex flex-col justify-between rounded-[1.04vw] text-[black] font-semibold text-[1.46vw]">
-            <div class="flex justify-between text-center">
-                <div v-for="(item, index) in unitList" :key="index" class="flex flex-col items-center w-[10.63vw]">
-                    <div class="h-[9.38vw] w-[9.38vw]">
-                        <img :src="item.logo" :alt="item.name" srcset="">
-                    </div>
-                    <div class="h-[2.03vw] mt-[0.73vw]">{{ item.name }}</div>
-                </div>
+    <div class="pt-[5.21vw] h-[46.88vw] bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg3})` }">
+        <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col ">
+            <div class="w-full flex justify-between leading-[2.55vw] h-[3.07vw] text-[2.19vw] font-semibold">
+                <div class="text-[#16212A]">合作单位</div>
+                <div class="text-[#EBEBEB]">Cooperative units</div>
             </div>
-            <div class="flex justify-between text-center">
-                <div v-for="(item, index) in unitList2" :key="index" class="flex flex-col items-center w-[10.63vw]">
-                    <div class="h-[9.38vw] w-[9.38vw]">
-                        <img :src="item.logo" :alt="item.name" srcset="">
+            <div class="mt-[2.6vw] w-full h-[32.08vw] pt-[3.13vw] pb-[2.5vw] px-[4.17vw] bg-white flex flex-col justify-between rounded-[1.04vw] text-[black] font-semibold text-[1.46vw]">
+                <div class="flex justify-between text-center">
+                    <div v-for="(item, index) in unitList" :key="index" class="flex flex-col items-center w-[10.63vw]">
+                        <div class="h-[9.38vw] w-[9.38vw]">
+                            <img :src="item.logo" :alt="item.name" srcset="">
+                        </div>
+                        <div class="h-[2.03vw] mt-[0.73vw]">{{ item.name }}</div>
                     </div>
-                    <div class="h-[2.03vw] mt-[0.73vw]">{{ item.name }}</div>
                 </div>
-            </div>
-            
+                <div class="flex justify-between text-center">
+                    <div v-for="(item, index) in unitList2" :key="index" class="flex flex-col items-center w-[10.63vw]">
+                        <div class="h-[9.38vw] w-[9.38vw]">
+                            <img :src="item.logo" :alt="item.name" srcset="">
+                        </div>
+                        <div class="h-[2.03vw] mt-[0.73vw]">{{ item.name }}</div>
+                    </div>
+                </div>
+                
+            </div>    
         </div>
+        
     </div>
 </template>
 
 <script setup lang="ts">
+import home_bg3 from '@/assets/img/home_bg3.png'
 import unit1 from '@/assets/img/unit1.png'
 import unit2 from '@/assets/img/unit2.png'
 import unit3 from '@/assets/img/unit3.png'

@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel-item w-full flex flex-col">
+    <div class="carousel-item w-full flex flex-col bg-[#EFEFEF]">
         <New />
         <Content />
     </div>

@@ -1,20 +1,20 @@
 <template>
-    <div class="flex flex-col h-[46.88vw] text-[1.04vw] text-center font-semibold">
-        <div class="h-[3.07vw] text-[2.19vw] leading-[2.55vw] mt-[8.33vw]">Empowering AI</div>
-        <div class="font-normal break-keep leading-[2.08vw] mt-[1.04vw]">
-            通过对人类身体本身智能属性的获取与计算建模，并将对应的智能性移植赋予到对应的虚拟或者实体智能体(Agent) 从而让智能体具备像人类本体一致表达的功能，行为与思想特质。
-        </div>
-        <div class="mt-[1.56vw]">
-            让每一个⼈参与构建AGI，让AGI解放每一个⼈
-        </div>
-        <div class=" bg-black rounded-[1vw] w-full h-[25vw] mt-[1.56vw]">
-
+    <div class="h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg1})` }">
+        <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col text-[1.04vw] text-center font-semibold">
+            <div class="h-[3.07vw] text-[2.19vw] leading-[2.55vw] mt-[8.33vw]">Empowering AI</div>
+            <div class="font-normal break-keep leading-[2.08vw] mt-[1.04vw]">
+                通过对人类身体本身智能属性的获取与计算建模，并将对应的智能性移植赋予到对应的虚拟或者实体智能体(Agent) 从而让智能体具备像人类本体一致表达的功能，行为与思想特质。
+            </div>
+            <div class="mt-[1.56vw]">
+                让每一个⼈参与构建AGI，让AGI解放每一个⼈
+            </div>
+            <img class="h-[25vw] w-full rounded-[1vw] mt-[1.56vw]" src="~/assets/img/home1.png" alt="" srcset="">
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-
+import home_bg1 from '@/assets/img/home_bg1.png'
 </script>
 
 <style scoped>

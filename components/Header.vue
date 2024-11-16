@@ -4,10 +4,21 @@
           <div class="flex h-[1.04vw] mt-[3.85vw] text-[0.94vw]">
             <div class="flex">
               <div v-for="(item) in tabList" :key="item.key" @click="handleChangeTab(item.key)"
-                :class="tabName === item.key ? ' h-[1.73vw] text-black font-semibold active':''" class="cursor-pointer mr-[2.65vw] text-[#1F1F1F] font-normal relative"
+                :class="`${tabName === item.key ? ' h-[1.73vw] text-black font-semibold active':''} ${item.key === 'product' ? 'dropdown dropdown-hover':''}`" 
+                class="cursor-pointer mr-[2.65vw] text-[#1F1F1F] font-normal relative"
               >
-                {{ item.name }}
+                <div v-if="item.key === 'product'" role="button" tabindex="0">
+                  {{ item.name }}
+                  <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw]">
+                    <div class="w-full h-full  px-[1.04vw] py-[1.56vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)]">
+                      <li @click="handleChangeMenu(1)" class="text-[1.03vw] mb-[1.47vw]"><a>技术产品</a></li>
+                      <li @click="handleChangeMenu(2)"><a>行业方案</a></li> 
+                    </div>
+                  </ul>
+                </div>
+                {{ item.key === 'product' ? "" : item.name }}
               </div>
+              
             </div>
             <div class="">中文 ｜ EN</div>
           </div>
@@ -29,7 +40,13 @@ const tabName = ref('home')
 
 const handleChangeTab = (val: string) => {
   tabName.value = val;
+  if(val === 'product') return
   emit('handleChangeTab',val)
+}
+
+const handleChangeMenu = (val: number) => {
+  emit('handleChangeTab','product')
+  emit('handleChangeMenu',val)
 }
 
 </script>
@@ -42,5 +59,17 @@ const handleChangeTab = (val: string) => {
   border-bottom: 0.17vw solid black;
   margin: 0 auto;
   margin-top: 0.4vw;
+}
+.dow {
+  margin-top: 1.46vw;
+  background: #fff;
+  color: #FFFFFF;
+  font-weight: 400;
+  li {
+    height: 1.1vw;
+  }
+  li:hover {
+    font-weight: 600;
+  }
 }
 </style>

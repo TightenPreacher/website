@@ -1,13 +1,11 @@
 <template>
     <div class="flex flex-col carousel-item w-full">
-        <div class="my-0 mx-auto w-[62.5vw] h-full relative">
-            <Empowering />
-            <ExMaschine />
-            <Model />
-            <Application />
-            <News />
-            <Cooperative />
-        </div>
+        <Empowering />
+        <ExMaschine />
+        <Model />
+        <Application />
+        <News />
+        <Cooperative />
     </div>
 </template>
 
