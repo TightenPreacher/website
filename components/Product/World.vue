@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[46.88vw] pt-[11.46vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg1})` }">
+    <div class="h-[46.88vw] pt-[11.46vw] bg-cover bg-center" :style="{ backgroundImage: `url(/img/home_bg1.png)` }">
         <div class="text-center my-0 mx-auto w-[62.5vw] h-full relative ">
             <div class="text-[#030303] font-semibold text-[1.98vw] leading-[2.34vw] h-[2.76vw]">世界模型</div>
             <div class="mt-[1.56vw] text-[1.04vw] leading-[2.08vw] font-normal text-[#1F1F1F]">
@@ -18,7 +18,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import home_bg1 from '@/assets/img/home_bg1.png'
 import world1 from '@/assets/img/world1.png'
 import world2 from '@/assets/img/world2.png'
 import world3 from '@/assets/img/world3.png'

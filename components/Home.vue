@@ -10,12 +10,12 @@
 </template>
 
 <script setup lang="ts">
-import Empowering from '@/components/Home/Empowering.vue'
-import ExMaschine from '@/components/Home/ExMaschine.vue'
-import Model from '@/components/Home/Model.vue'
-import Application from '@/components/Home/Application.vue'
-import News from '@/components/Home/News.vue'
-import Cooperative from '@/components/Home/Cooperative.vue'
+const Empowering = defineAsyncComponent(() => import('@/components/Home/Empowering.vue'))
+const ExMaschine = defineAsyncComponent(() => import('@/components/Home/ExMaschine.vue'))
+const Model = defineAsyncComponent(() => import('@/components/Home/Model.vue'))
+const Application = defineAsyncComponent(() => import('@/components/Home/Application.vue'))
+const News = defineAsyncComponent(() => import('@/components/Home/News.vue'))
+const Cooperative = defineAsyncComponent(() => import('@/components/Home/Cooperative.vue'))
 
 </script>
 

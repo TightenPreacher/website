@@ -3,15 +3,13 @@
         <AboutUs />
         <ExMaschine />
         <Team />
-        <!-- <Achievements /> -->
     </div>
 </template>
 
 <script setup lang="ts">
-import AboutUs from '@/components/About/AboutUs.vue'
-import Team from '@/components/About/Team.vue'
-import ExMaschine from '@/components/Home/ExMaschine.vue'
-// import Achievements from '@/components/About/Achievements.vue'
+const AboutUs = defineAsyncComponent(() => import('@/components/About/AboutUs.vue'))
+const ExMaschine = defineAsyncComponent(() => import('@/components/Home/ExMaschine.vue'))
+const Team = defineAsyncComponent(() => import('@/components/About/Team.vue'))
 
 </script>
 

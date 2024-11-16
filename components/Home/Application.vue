@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-[6.77vw] h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg1})` }">
+    <div class="pt-[6.77vw] h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(/img/home_bg1.png)` }">
         <div  class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col ">
             <div class="flex justify-between w-[47.55vw]">
                 <div class="text-[2.19vw] text-[#030303] leading-[2.55vw] h-[3.07vw] mt-[0.52vw]">应用场景</div>
@@ -24,7 +24,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import home_bg1 from '@/assets/img/home_bg1.png'
 import app1 from '@/assets/img/app1.png'
 import app2 from '@/assets/img/app2.png'
 import app3 from '@/assets/img/app3.png'

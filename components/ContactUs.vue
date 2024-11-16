@@ -7,9 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import Contact from '@/components/Contact/Contact.vue'
-import Form from '@/components/Contact/Form.vue'
-import Address from '@/components/Contact/Address.vue'
+const Contact = defineAsyncComponent(() => import('@/components/Contact/Contact.vue'))
+const Form = defineAsyncComponent(() => import('@/components/Contact/Form.vue'))
+const Address = defineAsyncComponent(() => import('@/components/Contact/Address.vue'))
 
 </script>
 

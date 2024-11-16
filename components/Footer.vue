@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full bg-cover bg-center" :style="{ backgroundImage: `url(${footer_bg})` }">
+    <div class="w-full bg-cover bg-center" :style="{ backgroundImage: `url(/img/footer_bg.png)` }">
         <div class="my-0 mx-auto w-[62.5vw] pb-[6.25vw] flex flex-col justify-end h-[46.88vw]">
             <div class="mb-[2.56vw] flex justify-between items-end">
                 <img class="h-[3.75vw] w-[9.84vw]" src="~/assets/img/logo.png" alt="姬器人科技" srcset="">
@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import footer_bg from '@/assets/img/footer_bg.png'
+
 const tabList = ref([
     {key:1,name:'首页'},
     {key:2,name:'产品'},

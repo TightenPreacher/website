@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import New from '@/components/News/New.vue'
-import Content from '@/components/News/Content.vue'
+const New = defineAsyncComponent(() => import('@/components/News/New.vue'))
+const Content = defineAsyncComponent(() => import('@/components/News/Content.vue'))
 
 </script>
 

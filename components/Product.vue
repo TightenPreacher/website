@@ -9,11 +9,11 @@
 </template>
 
 <script setup lang="ts">
-import Mod from '@/components/Product/Mod.vue'
-import World from '@/components/Product/World.vue'
-import Skill from '@/components/Product/Skill.vue'
-import Robot from '@/components/Product/Robot.vue'
-import System from '@/components/Product/System.vue'
+const Mod = defineAsyncComponent(() => import('@/components/Product/Mod.vue'))
+const World = defineAsyncComponent(() => import('@/components/Product/World.vue'))
+const Skill = defineAsyncComponent(() => import('@/components/Product/Skill.vue'))
+const Robot = defineAsyncComponent(() => import('@/components/Product/Robot.vue'))
+const System = defineAsyncComponent(() => import('@/components/Product/System.vue'))
 
 const props = defineProps({
     menu: {

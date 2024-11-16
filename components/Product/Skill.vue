@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="(item, index) in modList" :key="index" class="h-[46.88vw] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${index == 0 ? home_bg2 : home_bg1})` }">
+        <div v-for="(item, index) in modList" :key="index" class="h-[46.88vw] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${index == 0 ? home_bg2 : '/img/home_bg1.png'})` }">
             <div class="my-0 mx-auto w-[62.5vw] h-full relative ">
                 <div class="font-semibold text-black leading-[1.98vw] text-[1.67vw]" :class="index === 0 ? 'text-left' : 'text-right'">{{ item.title }}</div>
                 <div class="text-[1.04vw] text-[#1F1F1F] mt-[1.56vw]">{{ item.content }}</div>
@@ -18,7 +18,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import home_bg1 from '@/assets/img/home_bg1.png'
 import home_bg2 from '@/assets/img/home_bg2.png'
 import skill1 from '@/assets/img/skill1.png'
 import skill2 from '@/assets/img/skill2.png'
