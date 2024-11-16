@@ -1,18 +1,22 @@
 <template>
-    <div class="w-full pt-[2.08vw]">
-        <div v-for="(item, index) in newList" :key="index" class="mb-[3.65vw]">
-            <div class="relative rounded-[1.04vw] overflow-hidden">
-                <img class="w-full" :src="item.pic" alt="新闻">
-                <div class="bg-[#010406] h-[6.15vw] w-[6.77vw] absolute right-0 bottom-0 z-10 text-white text-center pt-[1.09vw] pl-[0.63vw] rounded-tl-[1.04vw]">
-                    <div class="font-semibold h-[2.34vw] text-[1.67vw] w-[6.15vw]">{{ item.time1 }}</div>
-                    <div class="font-normal h-[1.46vw] text-[1.04vw] w-[6.15vw]">{{ item.time2 }}</div>
+    <div class="w-full pt-[2.08vw] relative">
+        <img class="w-full z-10 absolute top-0 left-0" src="~/assets/img/home_bg2.png" alt="新闻">
+        <img class="w-full z-10 absolute bottom-0 left-0" src="~/assets/img/home_bg3.png" alt="新闻">
+        <div class="my-0 mx-auto w-[62.5vw] h-full relative z-30">
+            <div v-for="(item, index) in newList" :key="index" class="mb-[3.65vw]">
+                <div class="relative rounded-[1.04vw] overflow-hidden">
+                    <img class="w-full" :src="item.pic" alt="新闻">
+                    <div class="bg-[#010406] h-[6.15vw] w-[6.77vw] absolute right-0 bottom-0 z-10 text-white text-center pt-[1.09vw] pl-[0.63vw] rounded-tl-[1.04vw]">
+                        <div class="font-semibold h-[2.34vw] text-[1.67vw] w-[6.15vw]">{{ item.time1 }}</div>
+                        <div class="font-normal h-[1.46vw] text-[1.04vw] w-[6.15vw]">{{ item.time2 }}</div>
+                    </div>
                 </div>
-            </div>
-            <div class="flex flex-col mt-[2.08vw] text-[black] font-semibold text-[1.46vw]">
-                <div>{{ item.title }}</div>
-                <div v-if="item.title2">{{ item.title2 }}</div>
-            </div>
-            <div class="mt-[1.04vw] text-[1.04vw] text-[#1F1F1F] font-normal leading-[1.98vw]">{{ item.content }}</div>    
+                <div class="flex flex-col mt-[2.08vw] text-[black] font-semibold text-[1.46vw]">
+                    <div>{{ item.title }}</div>
+                    <div v-if="item.title2">{{ item.title2 }}</div>
+                </div>
+                <div class="mt-[1.04vw] text-[1.04vw] text-[#1F1F1F] font-normal leading-[1.98vw]">{{ item.content }}</div>    
+            </div>    
         </div>
     </div>
 </template>
@@ -20,6 +24,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+import home_bg2 from '@/assets/img/home_bg2.png'
+import home_bg3 from '@/assets/img/home_bg3.png'
 import new1 from '@/assets/img/new1.png'
 import new2 from '@/assets/img/new2.png'
 import new3 from '@/assets/img/new3.png'

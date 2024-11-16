@@ -1,26 +1,29 @@
 <template>
-    <div class="flex flex-col items-center justify-start pt-[5.36vw] h-[46.88vw]">
-        <div class="text-center text-[2.19vw] leading-[2.55vw] h-[3.07vw] text-[#030303]">新闻资讯</div>
-        <div class="flex justify-between mt-[2.6vw] w-full">
-            <div v-for="(item, index) in newList" :key="index" class="w-[15.05vw]">
-                <img class="h-[10.47vw] w-full" :src="item.img" alt="姬器人科技" srcset="">
-                <div class="flex flex-col p-[1.04vw] font-normal">
-                    <div class="font-semibold text-black h-[1.88vw] leading-[1.88vw] text-[1.25vw]">{{ item.title }}</div>
-                    <div class="text-[#555555] mt-[1.04vw] leading-[1.88vw] text-[1.15vw] h-[5.57vw]">{{ item.content }}</div>
-                    <div class="flex items-center justify-between text-[#ABABAB] leading-[1.88vw] mt-[1.04vw] mb-[0.52vw] text-[0.94vw] h-[1.56vw]">
-                        <div>{{ item.time }}</div>
-                        <img class="h-[1.35vw] w-[1.35vw] cursor-pointer" src="~/assets/img/btnRight2.png" alt="姬器人科技" srcset="">
+    <div class="pt-[5.36vw] h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
+        <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col items-center justify-start ">
+            <div class="text-center text-[2.19vw] leading-[2.55vw] h-[3.07vw] text-[#030303]">新闻资讯</div>
+            <div class="flex justify-between mt-[2.6vw] w-full">
+                <div v-for="(item, index) in newList" :key="index" class="w-[15.05vw]">
+                    <img class="h-[10.47vw] w-full" :src="item.img" alt="姬器人科技" srcset="">
+                    <div class="flex flex-col p-[1.04vw] font-normal">
+                        <div class="font-semibold text-black h-[1.88vw] leading-[1.88vw] text-[1.25vw]">{{ item.title }}</div>
+                        <div class="text-[#555555] mt-[1.04vw] leading-[1.88vw] text-[1.15vw] h-[5.57vw]">{{ item.content }}</div>
+                        <div class="flex items-center justify-between text-[#ABABAB] leading-[1.88vw] mt-[1.04vw] mb-[0.52vw] text-[0.94vw] h-[1.56vw]">
+                            <div>{{ item.time }}</div>
+                            <img class="h-[1.35vw] w-[1.35vw] cursor-pointer" src="~/assets/img/btnRight2.png" alt="姬器人科技" srcset="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
-            更多 >
+            <div class="mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
+                更多 >
+            </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import home_bg2 from '@/assets/img/home_bg2.png'
 import new11 from '@/assets/img/new11.png'
 import new22 from '@/assets/img/new22.png'
 import new33 from '@/assets/img/new33.png'

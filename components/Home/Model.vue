@@ -1,27 +1,29 @@
 <template>
-    <div class="flex justify-between pt-[6.76vw] h-[46.88vw]">
-        <div class="active h-[3.65vw] text-[2.19vw] mt-[11.77vw]">
-            {{ modelNmae }}
-        </div>
-        <div class="flex flex-col">
-            <img class="h-[27.71vw] w-[49.06vw]" :src="modelList[modelKey].pic" alt="姬器人科技" srcset="">
-            <div class="h-[3.13vw] mt-[3.13vw] flex items-center justify-between">
-                <div class="flex text-[1.15vw] h-[1.88vw] text-[#8E8E8E]">
-                    <div v-for="(item, index) in modelList" :key="item.key" 
-                        class="cursor-pointer mr-[3.13vw] font-normal"
-                        @click="handleChangeModel(index)"
-                        :class="modelKey === item.key ? 'text-[#16212A] font-semibold':''"
-                    >
-                        {{ item.name }}
+    <div class="pt-[6.76vw] h-[46.88vw] bg-[#EFEFEF]">
+        <div  class="my-0 mx-auto w-[62.5vw] h-full relative flex justify-between ">
+            <div class="active h-[3.65vw] text-[2.19vw] mt-[11.77vw]">
+                {{ modelNmae }}
+            </div>
+            <div class="flex flex-col">
+                <img class="h-[27.71vw] w-[49.06vw]" :src="modelList[modelKey].pic" alt="姬器人科技" srcset="">
+                <div class="h-[3.13vw] mt-[3.13vw] flex items-center justify-between">
+                    <div class="flex text-[1.15vw] h-[1.88vw] text-[#8E8E8E]">
+                        <div v-for="(item, index) in modelList" :key="item.key" 
+                            class="cursor-pointer mr-[3.13vw] font-normal"
+                            @click="handleChangeModel(index)"
+                            :class="modelKey === item.key ? 'text-[#16212A] font-semibold':''"
+                        >
+                            {{ item.name }}
+                        </div>
+                    </div>
+                    <div class="flex justify-between w-[9.9vw]">
+                        <img v-if="modelKey !== 0" @click="handleChange('left')" class="h-[3.13vw] w-[3.13vw] cursor-pointer" src="~/assets/img/btnLeft.png" alt="左" srcset="">
+                        <img v-if="modelKey === 0" class="h-[3.13vw] w-[3.13vw] cursor-not-allowed" src="~/assets/img/btnLeft2.png" alt="左" srcset="">
+                        <img v-if="modelKey !== 3" @click="handleChange('right')" class="h-[3.13vw] w-[3.13vw] cursor-pointer" src="~/assets/img/btnRight.png" alt="右" srcset="">
+                        <img v-if="modelKey === 3" class="h-[3.13vw] w-[3.13vw] cursor-not-allowed" src="~/assets/img/btnRight3.png" alt="右" srcset="">
                     </div>
                 </div>
-                <div class="flex justify-between w-[9.9vw]">
-                    <img v-if="modelKey !== 0" @click="handleChange('left')" class="h-[3.13vw] w-[3.13vw] cursor-pointer" src="~/assets/img/btnLeft.png" alt="左" srcset="">
-                    <img v-if="modelKey === 0" class="h-[3.13vw] w-[3.13vw] cursor-not-allowed" src="~/assets/img/btnLeft2.png" alt="左" srcset="">
-                    <img v-if="modelKey !== 3" @click="handleChange('right')" class="h-[3.13vw] w-[3.13vw] cursor-pointer" src="~/assets/img/btnRight.png" alt="右" srcset="">
-                    <img v-if="modelKey === 3" class="h-[3.13vw] w-[3.13vw] cursor-not-allowed" src="~/assets/img/btnRight3.png" alt="右" srcset="">
-                </div>
-            </div>
+            </div>    
         </div>
     </div>
 </template>
