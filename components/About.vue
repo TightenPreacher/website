@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col carousel-item w-full">
         <AboutUs />
-        <ExMaschine />
+        <ExMaschine :type="2" />
         <Team />
     </div>
 </template>

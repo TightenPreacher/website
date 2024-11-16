@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col carousel-item w-full">
         <Empowering />
-        <ExMaschine />
+        <ExMaschine :type="1" />
         <Model />
         <Application />
         <News />

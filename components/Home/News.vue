@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div @click="handleChangeTab" class="mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
+            <div @click="handleChangeTab" class="btn mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
                 更多 >
             </div>
         </div>
@@ -45,4 +45,7 @@ const handleChangeTab = () => {
 </script>
 
 <style scoped>
+.btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
 </style>

@@ -90,7 +90,7 @@ const handleChange = (type: string ,e: any) => {
     cooperation.value[type] = e.target.value
 }
 
-const handleFrom = async () => {
+const handleFrom = () => {
     org.value = false
     conta.value = false
     phone.value = false
@@ -121,14 +121,21 @@ const handleFrom = async () => {
     }
 
     if (org.value || conta.value || phone.value || email.value) return
-    
-    await $fetch('/feishu', {
-        method: 'POST',
-        body: {
-            "cooperation": cooperation.value,
-            "intention": [cooperationId.value],
-            "ways": [cooperationId.value]
-        }
+    if (cooperation.value.organization > 50) {
+        cooperation.value.organization = cooperation.value.organization.substring(0, 50)
+    }
+    if (cooperation.value.contacts > 10) {
+        cooperation.value.contacts = cooperation.value.contacts.substring(0, 10)
+    }
+    nextTick(async() => {
+        await $fetch('/feishu', {
+            method: 'POST',
+            body: {
+                "cooperation": cooperation.value,
+                "intention": [cooperationId.value],
+                "ways": [cooperationId.value]
+            }
+        })
     })
 } 
 </script>
