@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 
 const tabName = ref('home');
 const menu = ref(0);

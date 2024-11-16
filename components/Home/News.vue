@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
+            <div @click="handleChangeTab" class="mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
                 更多 >
             </div>
         </div>
@@ -23,13 +23,14 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+const { $eventBus } = useNuxtApp();
+
 import home_bg2 from '@/assets/img/home_bg2.png'
 import new11 from '@/assets/img/new11.png'
 import new22 from '@/assets/img/new22.png'
 import new33 from '@/assets/img/new33.png'
 import new44 from '@/assets/img/new44.png'
-
-import { ref } from 'vue'
 
 const newList = ref([
     {title: '姬器人创始人  CTO...', content: '2024年6月29日，由哈佛大学无锡校友会举办的 AIEC人工智能与俱身...', time: '2024-06-29', img: new11},
@@ -37,6 +38,10 @@ const newList = ref([
     {title: '姬器人创始人  CTO...', content: '2024年10月26日，创始人卢树强受邀参加出席由声网科技主办的 声网...', time: '2024-10-26', img: new33},
     {title: '敬请期待...', content: '更多新闻资讯内容', time: '--', img: new44}
 ])
+
+const handleChangeTab = () => {
+    $eventBus.emit('handleChangeTab', 'news');
+}
 </script>
 
 <style scoped>

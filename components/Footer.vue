@@ -7,7 +7,18 @@
             </div>
             <div class="divider my-0 h-0 bor"></div>
             <div class="flex text-[0.94vw] font-semibold h-[1.04vw] mt-[2.6vw]">
-                <div v-for="(item, index) in tabList" :key="index" class="mr-[3.65vw]">{{ item.name }}</div>
+                <div v-for="(item, index) in tabList" @click="handleChangeTab(item.key)" :key="index" class="mr-[3.65vw]" :class="item.key === 'product' ? 'dropdown dropdown-hover':''">
+                    <div v-if="item.key === 'product'" role="button" tabindex="0">
+                    {{ item.name }}
+                        <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw]">
+                            <div class="w-full h-full  px-[1.04vw] py-[1.56vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)]">
+                            <li @click="handleChangeMenu(1)" class="text-[1.03vw] mb-[1.47vw]"><a>技术产品</a></li>
+                            <li @click="handleChangeMenu(2)"><a>行业方案</a></li> 
+                            </div>
+                        </ul>
+                    </div>
+                    {{ item.key === 'product' ? "" : item.name }}
+                </div>
             </div>
             <div class="flex justify-between items-end">
                 <div class="flex flex-col text-black text-[0.94vw] leading-[2.19vw] font-normal">
@@ -22,14 +33,22 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+const { $eventBus } = useNuxtApp();
 
 const tabList = ref([
-    {key:1,name:'首页'},
-    {key:2,name:'产品'},
-    {key:3,name:'新闻'},
-    {key:4,name:'关于我们'},
-    {key:5,name:'联系我们'},
+    {name: '首页', key: 'home'},
+    {name: '产品', key: 'product'},
+    {name: '新闻', key: 'news'},
+    {name: '关于我们', key: 'about'},
+    {name: '联系我们', key: 'contactUs'},
 ])
+
+const handleChangeTab = (val: string) => {
+    $eventBus.emit('handleChangeTab', val);
+}
+const handleChangeMenu = (val: number) => {
+    $eventBus.emit('handleChangeMenu', val);
+}
 </script>
 
 <style scoped>
@@ -40,5 +59,18 @@ const tabList = ref([
 .bor::before {
     height: 1px;
     background-color: #5A5A5A;
+}
+.dow {
+  margin-top: 0.62vw;
+  margin-left: -1.15vw;
+  background: #fff;
+  color: #FFFFFF;
+  font-weight: 400;
+  li {
+    height: 1.1vw;
+  }
+  li:hover {
+    font-weight: 600;
+  }
 }
 </style>

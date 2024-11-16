@@ -26,7 +26,19 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
+import { ref,onMounted, onUnmounted } from 'vue';
+const { $eventBus } = useNuxtApp();
+
+onMounted(() => {
+  $eventBus.on('handleChangeTab', (e) => handleChangeTab(e));
+  $eventBus.on('handleChangeMenu', (e) => handleChangeMenu(e));
+});
+
+onUnmounted(() => {
+  $eventBus.off('handleChangeTab',(e) => handleChangeTab(e));
+  $eventBus.off('handleChangeMenu',(e) => handleChangeMenu(e));
+});
+
 const emit = defineEmits()
 
 const tabList = ref([
@@ -38,13 +50,13 @@ const tabList = ref([
 ])
 const tabName = ref('home')
 
-const handleChangeTab = (val: string) => {
+const handleChangeTab = (val: any) => {
   tabName.value = val;
   if(val === 'product') return
   emit('handleChangeTab',val)
 }
 
-const handleChangeMenu = (val: number) => {
+const handleChangeMenu = (val: any) => {
   emit('handleChangeTab','product')
   emit('handleChangeMenu',val)
 }
