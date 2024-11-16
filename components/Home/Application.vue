@@ -10,8 +10,8 @@
                 <div class="text-[1.04vw] leading-[2.4vw]">
                     <div v-for="(item, index) in modelList" :key="index"
                         @click="handleChange(index)"
-                        :class="item.key === modelKey ? 'active text-[#080808] font-semibold':''"
-                        class="text-[#8E8E8E] font-normal relative text-[1.46vw] h-[1.88vw] leading-[1.88vw] mb-[3.23vw] ml-[2.19vw] cursor-pointer"
+                        :class="item.key === modelKey ? 'active text-[#080808] font-semibold':'text-[#8E8E8E] font-normal'"
+                        class="relative text-[1.46vw] h-[1.88vw] leading-[1.88vw] mb-[3.23vw] ml-[2.19vw] cursor-pointer"
                     >
                         {{ item.name }}
                     </div>
