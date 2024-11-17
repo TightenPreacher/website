@@ -8,7 +8,7 @@
             <div class="mt-[1.56vw]">
                 让每一个⼈参与构建AGI，让AGI解放每一个⼈
             </div>
-            <img class="h-[25vw] w-full rounded-[1vw] mt-[1.56vw]" src="~/assets/img/home1.png" alt="" srcset="">
+            <img class="h-[25vw] w-full rounded-[1vw] mt-[1.56vw]" src="/img/home1.png" alt="" srcset="">
         </div>
     </div>
 </template>

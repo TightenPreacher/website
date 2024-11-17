@@ -6,7 +6,7 @@
                 <div class="text-[#EBEBEB] text-[2.6vw] leading-[3.07vw] h-[3.65vw]">Application scenarios</div>
             </div>
             <div class="flex mt-[3.13vw]">
-                <img class="h-[27.29vw] w-[47.55vw] mr-[3.02vw]" :src="modelList[modelKey].pic" alt="姬器人科技" srcset="">
+                <img class="h-[27.29vw] w-[47.55vw] mr-[3.02vw]" :src="`/img/app${modelKey+1}.png`" alt="姬器人科技" srcset="">
                 <div class="text-[1.04vw] leading-[2.4vw]">
                     <div v-for="(item, index) in modelList" :key="index"
                         @click="handleChange(index)"
@@ -24,21 +24,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import app1 from '@/assets/img/app1.png'
-import app2 from '@/assets/img/app2.png'
-import app3 from '@/assets/img/app3.png'
-import app4 from '@/assets/img/app4.png'
-import app5 from '@/assets/img/app5.png'
-import app6 from '@/assets/img/app6.png'
-
 const modelKey = ref(0)
 const modelList = ref([
-    {name: '医疗看护', key: 0, pic: app1},
-    {name: '康养陪护', key: 1, pic: app2},
-    {name: '居家陪护', key: 2, pic: app3},
-    {name: '情感陪互', key: 3, pic: app4},
-    {name: '情感陪伴', key: 4, pic: app5},
-    {name: '情感交互', key: 5, pic: app6},
+    {name: '医疗看护', key: 0},
+    {name: '康养陪护', key: 1},
+    {name: '居家陪护', key: 2},
+    {name: '情感陪互', key: 3},
+    {name: '情感陪伴', key: 4},
+    {name: '情感交互', key: 5},
 ])
 
 const handleChange = (index: number) => {
