@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute top-0 left-1/2 -translate-x-2/4 w-[62.5vw] flex justify-between z-20">
+    <div class="head absolute top-0 left-1/2 -translate-x-2/4 w-[62.5vw] flex justify-between z-20" tabindex="-1">
           <img class="h-[4.01vw] w-[10.52vw] mt-[2.86vw]" src="~/assets/img/logo.png" alt="姬器人科技" srcset="">
           <div class="flex h-[1.04vw] mt-[3.85vw] text-[0.94vw]">
             <div class="flex">
@@ -26,39 +26,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref,onMounted, onUnmounted } from 'vue';
-const { $eventBus } = useNuxtApp();
-
-onMounted(() => {
-  $eventBus.on('handleChangeTab', (e) => handleChangeTab(e));
-  $eventBus.on('handleChangeMenu', (e) => handleChangeMenu(e));
-});
-
-onUnmounted(() => {
-  $eventBus.off('handleChangeTab',(e) => handleChangeTab(e));
-  $eventBus.off('handleChangeMenu',(e) => handleChangeMenu(e));
-});
-
-const emit = defineEmits()
+import { ref} from 'vue';
+const props = defineProps({
+    type: {
+        type: String,
+        required: true
+    }
+})
 
 const tabList = ref([
   {name: '首页', key: 'home'},
   {name: '产品', key: 'product'},
   {name: '新闻', key: 'news'},
   {name: '关于我们', key: 'about'},
-  {name: '联系我们', key: 'contactUs'},
+  {name: '联系我们', key: 'contact'},
 ])
-const tabName = ref('home')
+const tabName = ref(props.type)
 
 const handleChangeTab = (val: any) => {
-  tabName.value = val;
   if(val === 'product') return
-  emit('handleChangeTab',val)
+  navigateTo(`/${val === 'home' ? '' : val}`)
 }
 
 const handleChangeMenu = (val: any) => {
-  emit('handleChangeTab','product')
-  emit('handleChangeMenu',val)
+  navigateTo(`/product?type=${val}`)
+  let he: any = document.querySelector('.head')
+  he.focus()
 }
 
 </script>

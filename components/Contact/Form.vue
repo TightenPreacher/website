@@ -1,11 +1,21 @@
 <template>
     <div class="h-[46.88vw] pt-[2.34vw]  bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg2})` }">
+        <div class="toast toast-top toast-center z-50 text-[1.2vw]" v-if="submi !== 0">
+            <div class="alert text-[#67c23a] bg-[#f0f9eb] border-[#e1f3d8] p-[0.8vw] px-[1.5vw]" v-if="submi === 1">
+                <span>提交成功</span>
+            </div>
+
+            <div class="alert text-[#e6a23c] bg-[#fdf6ec] border-[#faecd8] p-[0.8vw] px-[1.5vw]" v-if="submi === 2">
+                <span>工作人员将尽快与您联系，请勿重复提交，谢谢您的耐心</span>
+            </div>
+        </div>
+
         <div class="my-0 mx-auto w-[62.5vw] h-full relative">
             <div class="h-[3.07vw] text-[2.19vw] leading-[2.55vw] font-semibold text-[#030303]">项目合作</div>
             <div class="mt-[1.56vw]">
                 <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">公司/机构/组织名称*</div>
                 <div class="mt-[0.52vw] w-full">
-                    <input type="text" placeholder="请输入"
+                    <input type="text" placeholder="公司名称不能超过50个字"
                         @input="(e) => handleChange('organization',e)"
                         class="input input-bordered w-full h-[5.21vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw]" />
                         <div v-if="org" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">请输入公司/机构/组织名称</div>
@@ -14,7 +24,7 @@
             <div class="mt-[1.56vw] flex justify-between">
                 <div>
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">联系人姓名*</div>
-                    <input type="text" placeholder="请输入"
+                    <input type="text" placeholder="联系人不能超过15个字"
                         @input="(e) => handleChange('contacts',e)"
                         class="input input-bordered h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="conta" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">请输入联系人姓名</div>
@@ -62,6 +72,7 @@ const org = ref(false)
 const conta = ref(false)
 const phone = ref(false)
 const email = ref(false)
+const submi = ref(0)
 
 const phonetext = ref('')
 const emailtext = ref('')
@@ -104,7 +115,7 @@ const handleFrom = () => {
     const phoneRegex = /^1[3-9]\d{9}$/;
     if (!phoneRegex.test(cooperation.value.phone)) {
         phone.value = true
-        phonetext.value = '请输入正确的手机号'
+        phonetext.value = '格式错误，请核对后重新输入'
     }
     if (!cooperation.value.phone) {
         phone.value = true
@@ -113,7 +124,7 @@ const handleFrom = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(cooperation.value.email)) {
         email.value = true
-        emailtext.value = '请输入正确的邮箱'
+        emailtext.value = '格式错误，请核对后重新输入'
     }
     if (!cooperation.value.email) {
         email.value = true
@@ -128,7 +139,7 @@ const handleFrom = () => {
         cooperation.value.contacts = cooperation.value.contacts.substring(0, 10)
     }
     nextTick(async() => {
-        await $fetch('/feishu', {
+        let res: any = await $fetch('/feishu', {
             method: 'POST',
             body: {
                 "cooperation": cooperation.value,
@@ -136,6 +147,22 @@ const handleFrom = () => {
                 "ways": [cooperationId.value]
             }
         })
+        if (res.code == 10001) {
+            submi.value = 2
+        } else {
+            submi.value = 1
+            cooperation.value = {
+                organization: "",
+                contacts: "",
+                phone: "",
+                email: ""
+            }
+            cooperationId.value = 1
+        }
+
+        setTimeout(() => {
+            submi.value = 0
+        }, 2000);
     })
 } 
 </script>

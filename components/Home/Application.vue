@@ -6,7 +6,7 @@
                 <div class="text-[#EBEBEB] text-[2.6vw] leading-[3.07vw] h-[3.65vw]">Application scenarios</div>
             </div>
             <div class="flex mt-[3.13vw]">
-                <img class="h-[27.29vw] w-[47.55vw] mr-[3.02vw]" :src="`/img/app${modelKey+1}.png`" alt="姬器人科技" srcset="">
+                <img class="h-[27.29vw] w-[47.55vw] mr-[3.02vw]" @click="handleClick(modelKey)" :src="`/img/app${modelKey+1}.png`" alt="姬器人科技" srcset="">
                 <div class="text-[1.04vw] leading-[2.4vw]">
                     <div v-for="(item, index) in modelList" :key="index"
                         @click="handleChange(index)"
@@ -36,6 +36,10 @@ const modelList = ref([
 
 const handleChange = (index: number) => {
     modelKey.value = index
+}
+
+const handleClick = (index: number) => {
+    navigateTo(`/product?type=1`)
 }
 </script>
 

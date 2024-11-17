@@ -27,9 +27,8 @@ const props = defineProps({
         required: true
     }
 })
-const { $eventBus } = useNuxtApp();
 const handleChangeTab = () => {
-    $eventBus.emit('handleChangeTab', 'about');
+    navigateTo(`/about`)
 }
 </script>
 

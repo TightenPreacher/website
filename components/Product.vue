@@ -9,18 +9,18 @@
 </template>
 
 <script setup lang="ts">
+
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 const Mod = defineAsyncComponent(() => import('@/components/Product/Mod.vue'))
 const World = defineAsyncComponent(() => import('@/components/Product/World.vue'))
 const Skill = defineAsyncComponent(() => import('@/components/Product/Skill.vue'))
 const Robot = defineAsyncComponent(() => import('@/components/Product/Robot.vue'))
 const System = defineAsyncComponent(() => import('@/components/Product/System.vue'))
 
-const props = defineProps({
-    menu: {
-        type: Number,
-        required: true
-    }
-})
+const menu = ref(Number(route.query.type))
+
 </script>
 
 <style scoped>

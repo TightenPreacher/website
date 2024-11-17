@@ -5,7 +5,7 @@
                 {{ modelNmae }}
             </div>
             <div class="flex flex-col">
-                <img class="h-[27.71vw] w-[49.06vw]" :src="`/img/mod${modelKey+1}.png`" alt="姬器人科技" srcset="">
+                <img class="h-[27.71vw] w-[49.06vw]" @click="handleClick(modelKey)" :src="`/img/mod${modelKey+1}.png`" alt="姬器人科技" srcset="">
                 <div class="h-[3.13vw] mt-[3.13vw] flex items-center justify-between">
                     <div class="flex text-[1.15vw] h-[1.88vw] text-[#8E8E8E]">
                         <div v-for="(item, index) in modelList" :key="item.key" 
@@ -54,6 +54,10 @@ const handleChange = (val: string) => {
     nextTick(() => {
         modelNmae.value = modelList.value[modelKey.value].name
     })
+}
+
+const handleClick = (index: number) => {
+    navigateTo(`/product?type=2`)
 }
 </script>
 

@@ -24,7 +24,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const { $eventBus } = useNuxtApp();
 
 import home_bg2 from '@/assets/img/home_bg2.png'
 import new11 from '@/assets/img/new11.png'
@@ -40,7 +39,7 @@ const newList = ref([
 ])
 
 const handleChangeTab = () => {
-    $eventBus.emit('handleChangeTab', 'news');
+    navigateTo(`/news`)
 }
 </script>
 
