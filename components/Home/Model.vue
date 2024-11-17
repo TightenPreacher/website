@@ -57,7 +57,7 @@ const handleChange = (val: string) => {
 }
 
 const handleClick = (index: number) => {
-    navigateTo(`/product?type=2`)
+    navigateTo(`/product?type=2&at=${index+1}`)
 }
 </script>
 

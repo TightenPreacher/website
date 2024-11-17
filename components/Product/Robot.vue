@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[46.88vw] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
+    <div ref="robot" class="h-[46.88vw] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative  flex justify-between ">
             <img class="w-[24.27vw] h-[35.83vw] -ml-[3.12vw]" src="~/assets/img/robot.png" alt="" srcset="">
             <div class="flex flex-col w-[38.13vw]">
@@ -22,8 +22,19 @@
 </template>
 
 <script setup lang="ts">
-import home_bg2 from '@/assets/img/home_bg2.png'
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
+import home_bg2 from '@/assets/img/home_bg2.png'
+const robot = ref()
+onMounted(() => {
+    nextTick(() => {
+        if (route.query.at == '4' && robot.value) {
+            robot.value.scrollIntoView({block:'start'})
+        }
+    })
+})
 </script>
 
 <style scoped>

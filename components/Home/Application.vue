@@ -39,7 +39,7 @@ const handleChange = (index: number) => {
 }
 
 const handleClick = (index: number) => {
-    navigateTo(`/product?type=1`)
+    navigateTo(`/product?type=1&to=${index+1}`)
 }
 </script>
 
