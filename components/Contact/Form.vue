@@ -17,7 +17,7 @@
                 <div class="mt-[0.52vw] w-full">
                     <input type="text" placeholder="公司名称不能超过50个字"
                         @input="(e) => handleChange('organization',e)"
-                        class="input input-bordered w-full h-[5.21vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw]" />
+                        class="input w-full h-[5.21vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw]" />
                         <div v-if="org" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">请输入公司/机构/组织名称</div>
                 </div>
             </div>
@@ -26,21 +26,21 @@
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">联系人姓名*</div>
                     <input type="text" placeholder="联系人不能超过15个字"
                         @input="(e) => handleChange('contacts',e)"
-                        class="input input-bordered h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
+                        class="input h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="conta" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">请输入联系人姓名</div>
                 </div>
                 <div>
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">联系人电话*</div>
                     <input type="text" placeholder="请输入"
                         @input="(e) => handleChange('phone',e)"
-                        class="input input-bordered h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
+                        class="input h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="phone" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">{{ phonetext }}</div>
                 </div>
                 <div>
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">联系人邮箱*</div>
                     <input type="text" placeholder="请输入"
                         @input="(e) => handleChange('email',e)"
-                        class="input input-bordered h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
+                        class="input h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="email" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">{{ emailtext }}</div>
                 </div>
             </div>
@@ -91,7 +91,7 @@ const cooperationList = ref([
     { name: '其他', id: 4 },
 ])
 
-const cooperationId = ref(1)
+const cooperationId = ref(0)
 
 const handleCooperation = (id: number) => {
     cooperationId.value = id

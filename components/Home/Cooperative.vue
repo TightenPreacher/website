@@ -3,7 +3,7 @@
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col ">
             <div class="w-full flex justify-between leading-[2.55vw] h-[3.07vw] text-[2.19vw] font-semibold">
                 <div class="text-[#16212A]">合作单位</div>
-                <div class="text-[#EBEBEB]">Cooperative units</div>
+                <div class="text-[#000000] opacity-20">Cooperative units</div>
             </div>
             <div class="mt-[2.6vw] w-full h-[32.08vw] pt-[3.13vw] pb-[2.5vw] px-[4.17vw] bg-white flex flex-col justify-between rounded-[1.04vw] text-[black] font-semibold text-[1.46vw]">
                 <div class="flex justify-between text-center">

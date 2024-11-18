@@ -1,16 +1,16 @@
 <template>
     <div class="pt-[6.77vw] h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(/img/home_bg1.png)` }">
         <div  class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col ">
-            <div class="flex justify-between w-[47.55vw]">
+            <div class="flex justify-between w-[47.55vw] font-semibold">
                 <div class="text-[2.19vw] text-[#030303] leading-[2.55vw] h-[3.07vw] mt-[0.52vw]">应用场景</div>
-                <div class="text-[#EBEBEB] text-[2.6vw] leading-[3.07vw] h-[3.65vw]">Application scenarios</div>
+                <div class="text-[#color: #000000;] opacity-20 text-[2.6vw] leading-[3.07vw] h-[3.65vw]">Application scenarios</div>
             </div>
             <div class="flex mt-[3.13vw]">
                 <img class="h-[27.29vw] w-[47.55vw] mr-[3.02vw]" @click="handleClick(modelKey)" :src="`/img/app${modelKey+1}.png`" alt="姬器人科技" srcset="">
                 <div class="text-[1.04vw] leading-[2.4vw]">
                     <div v-for="(item, index) in modelList" :key="index"
                         @click="handleChange(index)"
-                        :class="item.key === modelKey ? 'active text-[#080808] font-semibold':'text-[#8E8E8E] font-normal'"
+                        :class="item.key === modelKey ? 'active text-[#080808] font-semibold':'text-[#8E8E8E] font-semibold'"
                         class="relative text-[1.46vw] h-[1.88vw] leading-[1.88vw] mb-[3.23vw] ml-[2.19vw] cursor-pointer"
                     >
                         {{ item.name }}
@@ -39,7 +39,7 @@ const handleChange = (index: number) => {
 }
 
 const handleClick = (index: number) => {
-    navigateTo(`/product?type=1&to=${index+1}`)
+    navigateTo(`/product?type=2&to=${index+1}`)
 }
 </script>
 

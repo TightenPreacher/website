@@ -2,7 +2,7 @@
     <div class="h-[46.88vw] pt-[4.69vw]   bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg3})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative ">
             <div class="flex justify-between text-[1.25vw] text-[#8E8E8E] font-normal">
-                <div :class="active === index ? 'active text-black' : ''" class="cursor-pointer" @click="handleChange(index)" v-for="(item, index) in list" :key="index">{{ item.title }}</div>   
+                <div :class="active === index ? 'active text-black font-semibold' : ''" class="cursor-pointer" @click="handleChange(index)" v-for="(item, index) in list" :key="index">{{ item.title }}</div>   
             </div>
             
             <div>

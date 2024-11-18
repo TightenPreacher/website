@@ -1,7 +1,7 @@
 <template>
     <div class="pt-[6.76vw] h-[46.88vw] bg-[#EFEFEF]">
         <div  class="my-0 mx-auto w-[62.5vw] h-full relative flex justify-between ">
-            <div class="active h-[3.65vw] text-[2.19vw] mt-[11.77vw]">
+            <div class="active h-[3.65vw] text-[2.19vw] mt-[11.77vw] font-semibold">
                 {{ modelNmae }}
             </div>
             <div class="flex flex-col">
@@ -57,7 +57,7 @@ const handleChange = (val: string) => {
 }
 
 const handleClick = (index: number) => {
-    navigateTo(`/product?type=2&at=${index+1}`)
+    navigateTo(`/product?type=1&at=${index+1}`)
 }
 </script>
 

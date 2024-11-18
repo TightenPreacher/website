@@ -1,10 +1,10 @@
 <template>
     <div class="carousel-item w-full flex flex-col pro" ref="scro">
-        <Mod v-if="menu === 1" />
-        <World v-if="menu === 2" />
-        <Skill v-if="menu === 2" />
-        <Robot v-if="menu === 2" />
-        <System v-if="menu === 2" />
+        <Mod v-if="menu === 2" />
+        <World v-if="menu === 1" />
+        <Skill v-if="menu === 1" />
+        <Robot v-if="menu === 1" />
+        <System v-if="menu === 1" />
     </div>
 </template>
 

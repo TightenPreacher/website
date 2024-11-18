@@ -1,7 +1,7 @@
 <template>
     <div class="pt-[5.36vw] h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col items-center justify-start ">
-            <div class="text-center text-[2.19vw] leading-[2.55vw] h-[3.07vw] text-[#030303]">新闻资讯</div>
+            <div class="text-center text-[2.19vw] leading-[2.55vw] h-[3.07vw] text-[#030303] font-semibold">新闻资讯</div>
             <div class="flex justify-between mt-[2.6vw] w-full">
                 <div v-for="(item, index) in newList" @click="handleChangeTab(index)" :key="index" class="w-[15.05vw]">
                     <img class="h-[10.47vw] w-full" :src="item.img" alt="姬器人科技" srcset="">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div @click="handleChangeTab" class="btnn mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
+            <div @click="handleChangeTab()" class="btnn mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
                 更多 >
             </div>
         </div>
@@ -38,7 +38,7 @@ const newList = ref([
     {title: '敬请期待...', content: '更多新闻资讯内容', time: '--', img: new44}
 ])
 
-const handleChangeTab = (index: number) => {
+const handleChangeTab = (index?: number) => {
     if (index === 0 || index) {
         navigateTo(`/news?to=${index+1}`)
     } else {
