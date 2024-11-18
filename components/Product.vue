@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel-item w-full flex flex-col overflow-y-scroll pro" ref="scro">
+    <div class="carousel-item w-full flex flex-col pro" ref="scro">
         <Mod v-if="menu === 1" />
         <World v-if="menu === 2" />
         <Skill v-if="menu === 2" />
