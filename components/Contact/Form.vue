@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[46.88vw] pt-[2.34vw]  bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg2})` }">
+    <div class="h-[100vh] pt-[2.34vw]  bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="toast toast-top toast-center z-50 text-[1.2vw]" v-if="submi !== 0">
             <div class="alert text-[#67c23a] bg-[#f0f9eb] border-[#e1f3d8] p-[0.8vw] px-[1.5vw]" v-if="submi === 1">
                 <span>提交成功</span>

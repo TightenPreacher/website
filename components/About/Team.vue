@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col pt-[3.75vw] h-[46.88vw]  bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg3})` }">
+    <div class="flex flex-col pt-[3.75vw] h-[100vh]  bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg3})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative">
             <div class="flex justify-between w-full text-[#030303] font-semibold items-center">
                 <div class="text-[2.19vw] leading-[3.65vw] h-[3.65vw]">团队介绍</div>

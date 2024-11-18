@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col w-full">
-       <div :ref="`mod${index+1}`" v-for="(item, index) in modList" :key="index" class="relative h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(/img/bg_pro${index+1}.png)` }">
+       <div :ref="`mod${index+1}`" v-for="(item, index) in modList" :key="index" class="relative h-[100vh] bg-cover bg-center" :style="{ backgroundImage: `url(/img/bg_pro${index+1}.png)` }">
             <div class="my-0 mx-auto w-[62.5vw] h-full relative">
                 <div class="absolute" :class="item.cls+item.cls2">
                     <div class="h-[3.07vw] text-[2.19vw] leading-[2.55vw] font-semibold text-black">{{ item.title }}</div>

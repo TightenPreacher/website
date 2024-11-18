@@ -1,5 +1,5 @@
 <template>
-    <div ref="robot" class="h-[46.88vw] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
+    <div ref="robot" class="h-[100vh] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative  flex justify-between ">
             <img class="w-[24.27vw] h-[35.83vw] -ml-[3.12vw]" src="~/assets/img/robot.png" alt="" srcset="">
             <div class="flex flex-col w-[38.13vw]">

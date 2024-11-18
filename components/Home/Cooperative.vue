@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-[5.21vw] h-[46.88vw] bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg3})` }">
+    <div class="pt-[5.21vw] h-[100vh] bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg3})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col ">
             <div class="w-full flex justify-between leading-[2.55vw] h-[3.07vw] text-[2.19vw] font-semibold">
                 <div class="text-[#16212A]">合作单位</div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-[10.42vw] h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
+    <div class="pt-[10.42vw] h-[100vh] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex justify-between ">
             <div>
                 <img class="h-[5.21vw] w-[5.21vw] mt-[0.52vw]" src="~/assets/img/logo2.png" alt="姬器人科技" srcset="">

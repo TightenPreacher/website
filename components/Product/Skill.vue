@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="(item, index) in modList" :ref="`${index === 0 ? 'mod' : 'skill' }`" :key="index" class="h-[46.88vw] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${index == 0 ? home_bg2 : '/img/home_bg1.png'})` }">
+        <div v-for="(item, index) in modList" :ref="`${index === 0 ? 'mod' : 'skill' }`" :key="index" class="h-[100vh] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${index == 0 ? home_bg2 : '/img/home_bg1.png'})` }">
             <div class="my-0 mx-auto w-[62.5vw] h-full relative ">
                 <div class="font-semibold text-black leading-[1.98vw] text-[1.67vw]" :class="index === 0 ? 'text-left' : 'text-right'">{{ item.title }}</div>
                 <div class="text-[1.04vw] text-[#1F1F1F] mt-[1.56vw]">{{ item.content }}</div>

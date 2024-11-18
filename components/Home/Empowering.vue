@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[46.88vw] bg-cover bg-center" :style="{ backgroundImage: `url(/img/home_bg1.png)` }">
+    <div class="h-[100vh] bg-cover bg-center" :style="{ backgroundImage: `url(/img/home_bg1.png)` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col text-[1.04vw] text-center font-semibold">
             <div class="h-[3.07vw] text-[2.19vw] leading-[2.55vw] mt-[8.33vw]">Empowering AI</div>
             <div class="font-normal break-keep leading-[2.08vw] mt-[1.04vw]">

@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[46.88vw] pt-[0.94vw] flex flex-col  bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg3})` }">
+    <div class="h-[100vh] pt-[0.94vw] flex flex-col  bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg3})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative">
             <div v-for="(item, index) in addressList" :key="index" class="mt-[6.77vw]">
                 <div class="flex items-center justify-between">
