@@ -3,11 +3,11 @@
           <img class="h-[4.01vw] w-[10.52vw] mt-[2.86vw]" src="~/assets/img/logo.png" alt="姬器人科技" srcset="">
           <div class="flex h-[1.04vw] mt-[3.85vw] text-[0.94vw]">
             <div class="flex">
-              <div v-for="(item) in tabList" :key="item.key" @click="handleChangeTab(item.key)"
+              <div v-for="(item) in tabList" :key="item.key" @mousemove="(e: any)=>handlemove(e,item.key)" @click="handleChangeTab(item.key)"
                 :class="`${tabName === item.key ? ' h-[1.73vw] text-black font-semibold active':''} ${item.key === 'product' ? 'dropdown dropdown-hover':''}`" 
-                class="cursor-pointer mr-[2.65vw] text-[#1F1F1F] font-normal relative"
+                class="cursor-pointer mr-[2.65vw] text-[#1F1F1F] font-normal relative" @mouseleave="handleLeave(item.key)"
               >
-                <div v-if="item.key === 'product'" role="button" tabindex="0">
+                <div v-if="item.key === 'product'" role="button" tabindex="0" id="pro" @mousemove="(e:any)=>handlemove(e,'123')">
                   {{ item.name }}
                   <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw]">
                     <div class="w-full h-full  px-[1.04vw] py-[1.56vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)] text-[rgba(255,255,255,0.6)] text-[0.94vw]">
@@ -54,6 +54,19 @@ const handleChangeTab = (val: any) => {
 
 const handleChangeMenu = (val: any) => {
   navigateTo(`/product?type=${val}`)
+  let he: any = document.querySelector('.head')
+  he.focus()
+}
+
+const handlemove = (e:any,val:string) => {
+  // e.stopPropagation()
+  if (!(val === 'product')) return 
+  let he: any = document.getElementById('pro')
+  he.focus()
+}
+
+const handleLeave = (val: string) => {
+  if ((val === 'product')) return 
   let he: any = document.querySelector('.head')
   he.focus()
 }
