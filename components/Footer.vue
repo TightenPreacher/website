@@ -3,7 +3,7 @@
         <div class="my-0 mx-auto w-[62.5vw] pb-[6.25vw] flex flex-col justify-end h-[46.88vw]">
             <div class="mb-[2.56vw] flex justify-between items-end">
                 <img class="h-[3.75vw] w-[9.84vw]" src="~/assets/img/logo.png" alt="姬器人科技" srcset="">
-                <div class=" font-semibold text-black text-[0.94vw] h-[1.72vw]">让每一个⼈参与构建AGI，让AGI解放每一个⼈</div>
+                <div class="font-semibold text-black text-[0.94vw] h-[1.72vw]">让每一个人参与构建AGI，让AGI解放每一个人</div>
             </div>
             <div class="divider my-0 h-0 bor"></div>
             <div class="flex text-[0.94vw] font-semibold h-[1.04vw] mt-[2.6vw]">
