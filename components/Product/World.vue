@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[46.88vw] pt-[11.46vw] bg-cover bg-center" :style="{ backgroundImage: `url(/img/home_bg1.png)` }">
+    <div class="h pt-[11.46vw] bg-cover bg-center" :style="{ backgroundImage: `url(/img/home_bg1.png)` }">
         <div class="text-center my-0 mx-auto w-[62.5vw] h-full relative ">
             <div class="text-[#030303] font-semibold text-[1.98vw] leading-[2.34vw] h-[2.76vw]">世界模型</div>
             <div class="mt-[1.56vw] text-[1.04vw] leading-[2.08vw] font-normal text-[#1F1F1F]">
@@ -36,5 +36,7 @@ const modList2 = ref([
 </script>
 
 <style scoped>
-
+.h {
+    height: calc(100vh);
+}
 </style>
