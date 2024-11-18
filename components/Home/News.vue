@@ -3,7 +3,7 @@
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col items-center justify-start ">
             <div class="text-center text-[2.19vw] leading-[2.55vw] h-[3.07vw] text-[#030303]">新闻资讯</div>
             <div class="flex justify-between mt-[2.6vw] w-full">
-                <div v-for="(item, index) in newList" :key="index" class="w-[15.05vw]">
+                <div v-for="(item, index) in newList" @click="handleChangeTab(index)" :key="index" class="w-[15.05vw]">
                     <img class="h-[10.47vw] w-full" :src="item.img" alt="姬器人科技" srcset="">
                     <div class="flex flex-col p-[1.04vw] font-normal">
                         <div class="font-semibold text-black h-[1.88vw] leading-[1.88vw] text-[1.25vw]">{{ item.title }}</div>
@@ -38,8 +38,12 @@ const newList = ref([
     {title: '敬请期待...', content: '更多新闻资讯内容', time: '--', img: new44}
 ])
 
-const handleChangeTab = () => {
-    navigateTo(`/news`)
+const handleChangeTab = (index: number) => {
+    if (index === 0 || index) {
+        navigateTo(`/news?to=${index+1}`)
+    } else {
+        navigateTo(`/news`)
+    }
 }
 </script>
 
