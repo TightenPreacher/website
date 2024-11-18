@@ -6,24 +6,16 @@ export default defineNuxtConfig({
 
   vite: {
     build: {
-      assetsInlineLimit: 4096, 
-      rollupOptions: {
-        output: {
-          chunkFileNames: 'static/chunks/[name]-[hash].js',
-          entryFileNames: 'static/js/[name]-[hash].js',
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]'
-        },
-        // 启用拆分块的优化
-        splitChunks: {
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-            },
-          },
-        },
-      },
+      assetsInlineLimit: Infinity, 
+      // rollupOptions: {
+      //   output: {
+      //     manualChunks(id) {
+      //       if (id.includes('node_modules')) {
+      //         return 'vendor'; // 将 node_modules 分离到一个单独的块中
+      //       }
+      //     }
+      //   }
+      // }
     },
     plugins: [compression()],
   },
@@ -49,11 +41,6 @@ export default defineNuxtConfig({
   devServer:{
     host: '0.0.0.0',
     port: 3000
-  },
-  vite:{
-    build:{
-      assetsInlineLimit: Infinity
-    }
   },
 
   postcss: {

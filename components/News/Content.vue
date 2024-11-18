@@ -3,7 +3,7 @@
         <img class="w-full z-10 absolute top-0 left-0" src="~/assets/img/home_bg2.png" alt="新闻">
         <img class="w-full z-10 absolute bottom-0 left-0" src="~/assets/img/home_bg3.png" alt="新闻">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative z-30">
-            <div :ref="`news${index+1}`" v-for="(item, index) in newList" :key="index" class="mb-[4.17vw]">
+            <div :id="`news${index+1}`" v-for="(item, index) in newList" :key="index" class="mb-[4.17vw]">
                 <div class="relative rounded-[1.04vw] overflow-hidden">
                     <img class="w-full" :src="`/img/new${index+1}.png`" alt="新闻">
                     <div class="bg-[#010406] h-[6.15vw] w-[6.77vw] absolute right-0 bottom-0 z-10 text-white text-center pt-[1.09vw] pl-[0.63vw] rounded-tl-[1.04vw]">
@@ -32,17 +32,14 @@ const newList = ref([
     {time1: '10/26', time2: '2024', title: '姬器人创始人 CEO卢树强 出席声网 RTE2024实时互联网大会', title2: '并于无所不在的计算：空间计算和新硬件技术专场，做专题报告： 脑机接口与俱身智能计算体系', content: '2024年10月26日，创始人卢树强受邀参加出席由声网科技主办的 声网RTE2024实时互联网大会，并在无所不在的计算：龙剑计算和新硬件技术专利论坛做   脑机接口与俱身智能计算体系的 技术专题报告，该报告主要给听众分享了脑机与俱身人形机器人的计算约束和计算难题，以及对应的计算体系与计算架构设计方案，并给大家分享了脑机与俱身机器人的真实行业应用场景与前景。'},
 ])
 
-const news1 = ref()
-const news2 = ref()
-const news3 = ref()
 onMounted(() => {
     nextTick(() => {
-        if (route.query.to == '1' && news1.value) {
-            news1.value[0].scrollIntoView({block:'start'})
-        } else if (route.query.to == '2' && news2.value) {
-            news2.value[0].scrollIntoView({block:'start'})
-        } else if (route.query.to == '3' && news3.value) {
-            news3.value[0].scrollIntoView({block:'start'})
+        if (route.query.to == '1') {
+            document.getElementById('news1')?.scrollIntoView({block:'start'})
+        } else if (route.query.to == '2') {
+            document.getElementById('news2')?.scrollIntoView({block:'start'})
+        } else if (route.query.to == '3') {
+            document.getElementById('news3')?.scrollIntoView({block:'start'})
         }
     })
 })

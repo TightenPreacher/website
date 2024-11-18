@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col w-full">
-       <div :ref="`mod${index+1}`" v-for="(item, index) in modList" :key="index" class="relative h-[100vh] bg-cover bg-center" :style="{ backgroundImage: `url(/img/bg_pro${index+1}.png)` }">
+       <div :id="`mod${index+1}`" v-for="(item, index) in modList" :key="index" class="relative h-[100vh] bg-cover bg-center" :style="{ backgroundImage: `url(/img/bg_pro${index+1}.png)` }">
             <div class="my-0 mx-auto w-[62.5vw] h-full relative">
                 <div class="absolute" :class="item.cls+item.cls2">
                     <div class="h-[3.07vw] text-[2.19vw] leading-[2.55vw] font-semibold text-black">{{ item.title }}</div>
@@ -20,12 +20,6 @@ import { ref, nextTick } from 'vue'
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const mod1 = ref()
-const mod2 = ref()
-const mod3 = ref()
-const mod4 = ref()
-const mod5 = ref()
-const mod6 = ref()
 
 const modList = ref([
     {title: '医疗看护', cls: 'top-[20.83vw] left-[2.08vw]', cls2: " w-[23.91vw]", content:'通过人形机器人搭载智能交互系统', content2:'实现医学临床场景下的病人看护与护理陪护' },
@@ -38,17 +32,18 @@ const modList = ref([
 
 onMounted(() => {
     nextTick(() => {
-        if (route.query.to == '2' && mod2.value) {
-            mod2.value[0].scrollIntoView({block:'start'})
-        } else if (route.query.to == '3' && mod3.value) {
-            mod3.value[0].scrollIntoView({block:'start'})
-        } else if (route.query.to == '4' && mod4.value) {
-            mod4.value[0].scrollIntoView({block:'start'})
-        } else if (route.query.to == '5' && mod5.value) {
-            mod5.value[0].scrollIntoView({block:'start'})
-        } else if (route.query.to == '6' && mod6.value) {
-            mod6.value[0].scrollIntoView({block:'start'})
-        }
+        if (route.query.to == '2') {
+            document.getElementById('mod2')?.scrollIntoView({block:'start'})
+        } else if (route.query.to == '3') {
+            document.getElementById('mod3')?.scrollIntoView({block:'start'})
+        } else if (route.query.to == '4') {
+            document.getElementById('mod4')?.scrollIntoView({block:'start'})
+            console.log(document.getElementById('mod4'));
+        } else if (route.query.to == '5') {
+            document.getElementById('mod5')?.scrollIntoView({block:'start'})
+        } else if (route.query.to == '6') {
+            document.getElementById('mod6')?.scrollIntoView({block:'start'})
+        } 
     })
 })
 </script>
