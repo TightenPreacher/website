@@ -16,7 +16,7 @@
                 <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">公司/机构/组织名称*</div>
                 <div class="mt-[0.52vw] w-full">
                     <input type="text" placeholder="公司名称不能超过50个字"
-                        @input="(e) => handleChange('organization',e)" v-model="cooperation.organization"
+                        @input="(e) => handleChange('organization',e)" v-model="cooperation.organization" maxlength="50"
                         class="input w-full h-[5.21vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw]" />
                         <div v-if="org" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">请输入公司/机构/组织名称</div>
                 </div>
@@ -25,7 +25,7 @@
                 <div>
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">联系人姓名*</div>
                     <input type="text" placeholder="联系人不能超过15个字"
-                        @input="(e) => handleChange('contacts',e)" v-model="cooperation.contacts"
+                        @input="(e) => handleChange('contacts',e)" v-model="cooperation.contacts" maxlength="15"
                         class="input h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="conta" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">请输入联系人姓名</div>
                 </div>
@@ -91,7 +91,7 @@ const cooperationList = ref([
     { name: '其他', id: 4 },
 ])
 
-const cooperationId = ref(0)
+const cooperationId = ref(4)
 
 const handleCooperation = (id: number) => {
     cooperationId.value = id
@@ -157,7 +157,7 @@ const handleFrom = () => {
                 phone: "",
                 email: ""
             }
-            cooperationId.value = 0
+            cooperationId.value = 4
         }
 
         setTimeout(() => {
