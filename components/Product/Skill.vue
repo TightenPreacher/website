@@ -3,7 +3,7 @@
         <div v-for="(item, index) in modList" :id="`${index === 0 ? 'mod' : 'skill' }`" :key="index" class="h-[100vh] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${index == 0 ? home_bg2 : '/img/home_bg1.png'})` }">
             <div class="my-0 mx-auto w-[62.5vw] h-full relative ">
                 <div class="font-semibold text-black leading-[1.98vw] text-[1.67vw]" :class="index === 0 ? 'text-left' : 'text-right'">{{ item.title }}</div>
-                <div class="text-[1.04vw] text-[#1F1F1F] mt-[1.56vw]">{{ item.content }}</div>
+                <div class="text-[1.04vw] text-[#1F1F1F] mt-[1.56vw] leading-[2.4vw]">{{ item.content }}</div>
                 <div class="flex justify-between mt-[2.6vw]">
                     <div class="text-center" v-for="(val, ind) in item.list" :key="ind">
                         <img class="h-[20.1vw] w-[20.1vw] rounded-[1.04vw]" :src="`/img/skill${index === 0 ? ind+1 : ind+4}.png`" alt="姬器人科技" srcset="">

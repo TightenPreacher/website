@@ -11,7 +11,7 @@
                         <div class="font-normal h-[1.46vw] text-[1.04vw] w-[6.15vw]">{{ item.time2 }}</div>
                     </div>
                 </div>
-                <div class="flex flex-col mt-[1.56vw] text-[black] font-semibold text-[1.25vw]">
+                <div class="flex flex-col mt-[1.56vw] text-[black] font-semibold text-[1.15vw] leading-[2.08vw]">
                     <div>{{ item.title }}</div>
                     <div v-if="item.title2">{{ item.title2 }}</div>
                 </div>
