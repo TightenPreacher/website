@@ -144,7 +144,8 @@ const handleFrom = () => {
             body: {
                 "cooperation": cooperation.value,
                 "intention": [cooperationId.value],
-                "ways": [cooperationId.value]
+                "ways": [cooperationId.value],
+                "product": "ex"
             }
         })
         if (res.code == 10001) {
