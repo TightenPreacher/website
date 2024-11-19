@@ -9,7 +9,7 @@
               >
                 <div v-if="item.key === 'product'" role="button" tabindex="0" id="pro" @mousemove="(e:any)=>handlemove(e,'123')">
                   {{ item.name }}
-                  <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw]">
+                  <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw] font-normal">
                     <div class="w-full h-full  px-[1.04vw] py-[1.56vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)] text-[rgba(255,255,255,0.6)] text-[0.94vw]">
                       <li @click="handleChangeMenu(1)" class="text-[1.03vw] mb-[1.47vw]"><a>技术产品</a></li>
                       <li @click="handleChangeMenu(2)"><a>行业方案</a></li> 
@@ -60,15 +60,15 @@ const handleChangeMenu = (val: any) => {
 
 const handlemove = (e:any,val:string) => {
   // e.stopPropagation()
-  if (!(val === 'product')) return 
-  let he: any = document.getElementById('pro')
-  he.focus()
+  // if (!(val === 'product')) return 
+  // let he: any = document.getElementById('pro')
+  // he.focus()
 }
 
 const handleLeave = (val: string) => {
-  if ((val === 'product')) return 
-  let he: any = document.querySelector('.head')
-  he.focus()
+  // if ((val === 'product')) return 
+  // let he: any = document.querySelector('.head')
+  // he.focus()
 }
 
 </script>
@@ -91,7 +91,6 @@ const handleLeave = (val: string) => {
     height: 1.1vw;
   }
   li:hover {
-    font-weight: 600;
     color: #fff;
   }
 }
