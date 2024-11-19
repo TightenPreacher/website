@@ -135,8 +135,8 @@ const handleFrom = () => {
     if (cooperation.value.organization > 50) {
         cooperation.value.organization = cooperation.value.organization.substring(0, 50)
     }
-    if (cooperation.value.contacts > 10) {
-        cooperation.value.contacts = cooperation.value.contacts.substring(0, 10)
+    if (cooperation.value.contacts > 15) {
+        cooperation.value.contacts = cooperation.value.contacts.substring(0, 15)
     }
     nextTick(async() => {
         let res: any = await $fetch('/feishu', {
