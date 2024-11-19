@@ -16,7 +16,7 @@
                 <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">公司/机构/组织名称*</div>
                 <div class="mt-[0.52vw] w-full">
                     <input type="text" placeholder="公司名称不能超过50个字"
-                        @input="(e) => handleChange('organization',e)" v-model="cooperation.organization" maxlength="50"
+                        @input="(e: any) => handleChange('organization',e)" v-model="cooperation.organization" maxlength="50"
                         class="input w-full h-[5.21vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw]" />
                         <div v-if="org" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">请输入公司/机构/组织名称</div>
                 </div>
@@ -25,21 +25,21 @@
                 <div>
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">联系人姓名*</div>
                     <input type="text" placeholder="联系人不能超过15个字"
-                        @input="(e) => handleChange('contacts',e)" v-model="cooperation.contacts" maxlength="15"
+                        @input="(e: any) => handleChange('contacts',e)" v-model="cooperation.contacts" maxlength="15"
                         class="input h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="conta" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">请输入联系人姓名</div>
                 </div>
                 <div>
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">联系人电话*</div>
                     <input type="text" placeholder="请输入"
-                        @input="(e) => handleChange('phone',e)" v-model="cooperation.phone"
+                        @input="(e: any) => handleChange('phone',e)" v-model="cooperation.phone"
                         class="input h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="phone" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">{{ phonetext }}</div>
                 </div>
                 <div>
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">联系人邮箱*</div>
                     <input type="text" placeholder="请输入"
-                        @input="(e) => handleChange('email',e)" v-model="cooperation.email"
+                        @input="(e: any) => handleChange('email',e)" v-model="cooperation.email"
                         class="input h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="email" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">{{ emailtext }}</div>
                 </div>
@@ -48,8 +48,8 @@
                 <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">意向合作方式</div>
                 <div class="flex justify-between mt-[0.52vw]">
                     <div v-for="(item, index) in cooperationList" :key="index" @click="handleCooperation(item.id)"
-                        class="w-[15.16vw] h-[5.21vw] leading-[5.21vw] rounded-[4.17vw] text-center text-[1.25vw] cursor-pointer font-medium"
-                        :class="item.id === cooperationId ? ' bg-black text-white' : 'bg-white text-[#555555]'">{{ item.name
+                        class="w-[15.16vw] h-[5.21vw] leading-[5.21vw] rounded-[4.17vw] text-center text-[1.25vw] cursor-pointer font-normal"
+                        :class="item.id === cooperationId ? ' bg-black text-white font-medium' : 'bg-white text-[#555555]'">{{ item.name
                         }}</div>
                 </div>
             </div>
@@ -168,4 +168,12 @@ const handleFrom = () => {
 } 
 </script>
 
-<style scoped></style>
+<style scoped>
+input::placeholder {
+    font-weight: 400;
+    color: #B6C0CA;
+}
+input:focus::placeholder {
+    font-weight: 600;
+}
+</style>

@@ -1,18 +1,18 @@
 <template>
-    <div class="head absolute top-0 left-1/2 -translate-x-2/4 w-[62.5vw] flex justify-between z-20" tabindex="-1">
+    <div class="head absolute top-0 left-1/2 -translate-x-2/4 w-[62.5vw] flex justify-between z-20" tabindex="-1" @mouseleave="handleLeave('')" >
           <img class="h-[4.01vw] w-[10.52vw] mt-[2.86vw]" src="~/assets/img/logo.png" alt="姬器人科技" srcset="">
           <div class="flex h-[1.04vw] mt-[3.85vw] text-[0.94vw]">
             <div class="flex">
               <div v-for="(item) in tabList" :key="item.key" @mousemove="(e: any)=>handlemove(e,item.key)" @click="handleChangeTab(item.key)"
                 :class="`${tabName === item.key ? ' h-[1.73vw] text-black font-semibold active':''} ${item.key === 'product' ? 'dropdown dropdown-hover':''}`" 
-                class="cursor-pointer mr-[2.65vw] text-[#1F1F1F] font-normal relative" @mouseleave="handleLeave(item.key)"
+                class="cursor-pointer mr-[2.65vw] text-[#1F1F1F] font-normal relative" @mouseenter="handleLeave(item.key)"
               >
                 <div v-if="item.key === 'product'" role="button" tabindex="0" id="pro" @mousemove="(e:any)=>handlemove(e,'123')">
                   {{ item.name }}
                   <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw] font-normal">
-                    <div class="w-full h-full  px-[1.04vw] py-[1.56vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)] text-[rgba(255,255,255,0.6)] text-[1.03vw]">
+                    <div class="w-full h-full  px-[1.04vw] py-[1.56vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)] text-[rgba(255,255,255,0.6)] text-[0.94vw]">
                       <li @click="handleChangeMenu(1)" class="mb-[1.47vw]"><a>技术产品</a></li>
-                      <li @click="handleChangeMenu(2)"><a>行业方案</a></li> 
+                      <li @click="handleChangeMenu(2)" class="mb-[0.2vw]"><a>行业方案</a></li> 
                     </div>
                   </ul>
                 </div>
@@ -59,16 +59,16 @@ const handleChangeMenu = (val: any) => {
 }
 
 const handlemove = (e:any,val:string) => {
-  // e.stopPropagation()
-  // if (!(val === 'product')) return 
-  // let he: any = document.getElementById('pro')
-  // he.focus()
+  e.stopPropagation()
+  if (!(val === 'product' || val === '123')) return 
+  let he: any = document.getElementById('pro')
+  he.focus()
 }
 
 const handleLeave = (val: string) => {
-  // if ((val === 'product')) return 
-  // let he: any = document.querySelector('.head')
-  // he.focus()
+  if ((val === 'product')) return 
+  let he: any = document.querySelector('.head')
+  he.focus()
 }
 
 </script>
@@ -93,5 +93,8 @@ const handleLeave = (val: string) => {
   li:hover {
     color: #fff;
   }
+}
+.head:focus-visible {
+  outline: transparent;
 }
 </style>
