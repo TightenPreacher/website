@@ -1,14 +1,14 @@
 <template>
-    <div class="w-full bg-cover bg-center" :style="{ backgroundImage: `url(/img/footer_bg.png)` }">
-        <div class="my-0 mx-auto w-[62.5vw] pb-[6.25vw] flex flex-col justify-end h-[46.88vw]">
+    <div class="foo w-full bg-cover bg-center" :style="{ backgroundImage: `url(/img/footer_bg.png)` }">
+        <div class="my-0 mx-auto w-[62.5vw] pb-[6.25vw] flex flex-col justify-end h-[46.88vw]" @mouseleave="handleLeave('')">
             <div class="mb-[2.56vw] flex justify-between items-end">
                 <img class="h-[3.75vw] w-[9.84vw]" src="~/assets/img/logo.png" alt="姬器人科技" srcset="">
                 <div class="font-semibold text-black text-[0.94vw] h-[1.72vw]">让每一个人参与构建AGI，让AGI解放每一个人</div>
             </div>
             <div class="divider my-0 h-0 bor"></div>
             <div class="flex text-[0.94vw] font-semibold h-[1.04vw] mt-[2.6vw]">
-                <div v-for="(item, index) in tabList" @click="handleChangeTab(item.key)" :key="index" class="mr-[3.65vw]" :class="item.key === 'product' ? 'dropdown dropdown-hover':''">
-                    <div v-if="item.key === 'product'" role="button" tabindex="0">
+                <div v-for="(item, index) in tabList" @mousemove="(e: any)=>handlemove(e,item.key)" @click="handleChangeTab(item.key)" :key="index" class="mr-[3.65vw] cursor-pointer" @mouseenter="handleLeave(item.key)" :class="item.key === 'product' ? 'dropdown dropdown-hover':''">
+                    <div v-if="item.key === 'product'" role="button" tabindex="0" id="pro2" @mousemove="(e:any)=>handlemove(e,'123')">
                     {{ item.name }}
                         <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw] font-normal">
                             <div class="w-full h-full  px-[1.04vw] py-[1.56vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)] text-[rgba(255,255,255,0.6)] text-[0.94vw]">
@@ -51,6 +51,20 @@ const handleChangeMenu = (val: number) => {
   let he: any = document.querySelector('.head')
   he.focus()
 }
+
+const handlemove = (e:any,val:string) => {
+  e.stopPropagation()
+  if (!(val === 'product' || val === '123')) return 
+  let he: any = document.getElementById('pro2')
+  he.focus()
+}
+
+const handleLeave = (val: string) => {
+  if ((val === 'product')) return 
+  
+  let he: any = document.getElementById('pro2')
+  he.blur()
+}
 </script>
 
 <style scoped>
@@ -76,4 +90,7 @@ const handleChangeMenu = (val: number) => {
     color: #fff;
   }
 }
+.foo:focus-visible {
+    outline: transparent;
+  }
 </style>
