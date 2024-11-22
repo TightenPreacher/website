@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col pt-[3.75vw] h-[100vh]  bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg3})` }">
+    <div class="flex flex-col pt-[3.75vw] bg-cover bg-center" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'" :style="{ backgroundImage: `url(${home_bg3})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative">
             <div class="flex justify-between w-full text-[#030303] font-semibold items-center">
                 <div class="text-[2.19vw] leading-[3.65vw] h-[3.65vw]">团队介绍</div>
@@ -28,6 +28,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import {getClientType} from '@/utils/utils.js'
+
+const isWeb = ref(getClientType() === 'web')
 import team1 from '@/assets/img/team1.png'
 import team2 from '@/assets/img/team2.png'
 import home_bg3 from '@/assets/img/home_bg3.png'

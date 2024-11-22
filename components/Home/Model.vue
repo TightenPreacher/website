@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-[6.76vw] h-[100vh] bg-[#EFEFEF]">
+    <div class="pt-[6.76vw]  bg-[#EFEFEF]" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'">
         <div  class="my-0 mx-auto w-[62.5vw] h-full relative flex justify-between ">
             <div class="active h-[3.65vw] text-[2.19vw] mt-[11.77vw] font-semibold">
                 {{ modelNmae }}
@@ -30,7 +30,9 @@
 
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
+import {getClientType} from '@/utils/utils.js'
 
+const isWeb = ref(getClientType() === 'web')
 const modelNmae = ref('世界模型')
 const modelKey = ref(0)
 const modelList = ref([

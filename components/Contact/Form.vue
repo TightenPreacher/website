@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[100vh] pt-[2.34vw]  bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg2})` }">
+    <div class="pt-[2.34vw]  bg-cover bg-center" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'" :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="toast toast-top toast-center z-50 text-[1.2vw]" v-if="submi !== 0">
             <div class="alert text-[#67c23a] bg-[#f0f9eb] border-[#e1f3d8] p-[0.8vw] px-[1.5vw]" v-if="submi === 1">
                 <span>提交成功</span>
@@ -48,8 +48,8 @@
                 <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">意向合作方式</div>
                 <div class="flex justify-between mt-[0.52vw]">
                     <div v-for="(item, index) in cooperationList" :key="index" @click="handleCooperation(item.id)"
-                        class="w-[15.16vw] h-[5.21vw] leading-[5.21vw] rounded-[4.17vw] text-center text-[1.25vw] cursor-pointer font-normal"
-                        :class="item.id === cooperationId ? ' bg-black text-white font-medium' : 'bg-white text-[#555555]'">{{ item.name
+                        class="w-[15.16vw] h-[5.21vw] leading-[5.21vw] rounded-[4.17vw] text-center text-[1.25vw] cursor-pointer"
+                        :class="item.id === cooperationId ? ' bg-black text-white font-medium' : 'bg-white text-[#555555] font-normal'">{{ item.name
                         }}</div>
                 </div>
             </div>
@@ -66,6 +66,9 @@
 
 <script setup lang="ts">
 import { ref,nextTick } from 'vue'
+import {getClientType} from '@/utils/utils.js'
+
+const isWeb = ref(getClientType() === 'web')
 import home_bg2 from '@/assets/img/home_bg2.png'
 
 const org = ref(false)
@@ -173,7 +176,10 @@ input::placeholder {
     font-weight: 400;
     color: #B6C0CA;
 }
-input:focus::placeholder {
+input {
     font-weight: 600;
+}
+input:focus {
+    outline: transparent;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-[5.36vw] h-[100vh] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
+    <div class="pt-[5.36vw] bg-cover bg-center" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'" :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col items-center justify-start ">
             <div class="text-center text-[2.19vw] leading-[2.55vw] h-[3.07vw] text-[#030303] font-semibold">新闻资讯</div>
             <div class="flex justify-between mt-[2.6vw] w-full">
@@ -24,7 +24,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import {getClientType} from '@/utils/utils.js'
 
+const isWeb = ref(getClientType() === 'web')
 import home_bg2 from '@/assets/img/home_bg2.png'
 import new11 from '@/assets/img/new11.png'
 import new22 from '@/assets/img/new22.png'

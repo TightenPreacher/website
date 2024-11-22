@@ -1,5 +1,5 @@
 <template>
-    <div id="robot" class="h-[100vh] pt-[5.2vw] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
+    <div id="robot" class="pt-[5.2vw] bg-cover bg-center" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'" :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative  flex justify-between ">
             <img class="w-[24.27vw] h-[35.83vw] -ml-[3.12vw]" src="~/assets/img/robot.png" alt="" srcset="">
             <div class="flex flex-col w-[38.13vw]">
@@ -23,6 +23,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import {getClientType} from '@/utils/utils.js'
+
+const isWeb = ref(getClientType() === 'web')
 import { useRoute } from 'vue-router';
 
 const route = useRoute();

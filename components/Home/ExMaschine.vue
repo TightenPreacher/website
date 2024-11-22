@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-[10.42vw] h-[100vh] bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg2})` }">
+    <div class="pt-[10.42vw] bg-cover bg-center" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'" :style="{ backgroundImage: `url(${home_bg2})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex justify-between ">
             <div>
                 <img class="h-[5.21vw] w-[5.21vw] mt-[0.52vw]" src="~/assets/img/logo2.png" alt="姬器人科技" srcset="">
@@ -20,6 +20,10 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import {getClientType} from '@/utils/utils.js'
+
+const isWeb = ref(getClientType() === 'web')
 import home_bg2 from '@/assets/img/home_bg2.png'
 const props = defineProps({
     type: {

@@ -10,9 +10,9 @@
                 <div v-if="item.key === 'product'" role="button" tabindex="0" id="pro" @mousemove="(e:any)=>handlemove(e,'123')">
                   {{ item.name }}
                   <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw] font-normal">
-                    <div class="w-full h-full  px-[1.04vw] py-[1.56vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)] text-[rgba(255,255,255,0.6)] text-[0.94vw]">
-                      <li @click="handleChangeMenu(1)" class="mb-[1.47vw]"><a>技术产品</a></li>
-                      <li @click="handleChangeMenu(2)" class="mb-[0.2vw]"><a>行业方案</a></li> 
+                    <div class="w-full flex flex-col justify-center  px-[1.04vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)] text-[rgba(255,255,255,0.6)] text-[0.94vw] h-[7.13vw]">
+                      <li @click="handleChangeMenu(1)" class="mb-[1.47vw] -mt-[0.3vw]"><a>技术产品</a></li>
+                      <li @click="handleChangeMenu(2)"><a>行业方案</a></li> 
                     </div>
                   </ul>
                 </div>

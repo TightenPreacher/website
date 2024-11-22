@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[100vh] pt-[0.94vw] flex flex-col  bg-cover bg-center" :style="{ backgroundImage: `url(${home_bg3})` }">
+    <div class="pt-[0.94vw] flex flex-col  bg-cover bg-center" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'" :style="{ backgroundImage: `url(${home_bg3})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative">
             <div v-for="(item, index) in addressList" :key="index" class="mt-[6.77vw]">
                 <div class="flex items-center justify-between">
@@ -15,7 +15,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import {getClientType} from '@/utils/utils.js'
 
+const isWeb = ref(getClientType() === 'web')
 import home_bg3 from '@/assets/img/home_bg3.png'
 const addressList = ref([
     { title: '商业合作', add: '邮箱：BP@maschinerobot.com', text: '合作共赢，开启智能穿戴与脑机交互新时代。'},

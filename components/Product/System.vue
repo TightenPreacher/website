@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[100vh] pt-[4.69vw]   bg-cover bg-center"  :style="{ backgroundImage: `url(${home_bg3})` }">
+    <div class="pt-[4.69vw] bg-cover bg-center" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'" :style="{ backgroundImage: `url(${home_bg3})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative ">
             <div class="flex justify-between text-[1.25vw] text-[#8E8E8E] font-normal">
                 <div :class="active === index ? 'active text-black font-semibold' : ''" class="cursor-pointer" @click="handleChange(index)" v-for="(item, index) in list" :key="index">{{ item.title }}</div>   
@@ -16,6 +16,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import {getClientType} from '@/utils/utils.js'
+
+const isWeb = ref(getClientType() === 'web')
 import home_bg3 from '@/assets/img/home_bg3.png'
 
 const active = ref(0)
