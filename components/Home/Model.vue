@@ -1,19 +1,22 @@
 <template>
     <div class="pt-[6.76vw]  bg-[#EFEFEF]" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'">
-        <div  class="my-0 mx-auto w-[62.5vw] h-full relative flex justify-between ">
-            <div class="active h-[3.65vw] text-[2.19vw] mt-[11.77vw] font-semibold">
-                {{ modelNmae }}
+        <div class="my-0 mx-auto w-[62.5vw] h-full relative flex  flex-col ">
+            <div class="flex justify-between">
+                <div class="active h-[3.65vw] mt-[11.77vw] font-semibold" :class="`${lan === 'zh' ? 'text-[2.19vw]' : 'min-w-[10vw] leading-[2.92vw] text-[1.67vw]'} ${modelNmae === 'World model' ? 'w-[10vw]' : ''}`">
+                    {{ modelNmae }}
+                </div>
+                <img class="h-[27.71vw]" @click="handleClick(modelKey)" :src="`/img/mod${modelKey+1}.png`" alt="姬器人科技" srcset="" :class="lan === 'zh' ? 'w-[49.06vw]' : 'w-[48.46vw]'">
             </div>
+            
             <div class="flex flex-col">
-                <img class="h-[27.71vw] w-[49.06vw]" @click="handleClick(modelKey)" :src="`/img/mod${modelKey+1}.png`" alt="姬器人科技" srcset="">
-                <div class="h-[3.13vw] mt-[3.13vw] flex items-center justify-between">
+                <div class="h-[3.13vw] mt-[3.13vw] flex items-center justify-end">
                     <div class="flex text-[1.15vw] h-[1.88vw] text-[#8E8E8E]">
                         <div v-for="(item, index) in modelList" :key="item.key" 
-                            class="cursor-pointer mr-[3.13vw] font-normal"
+                            class="cursor-pointer font-normal"
                             @click="handleChangeModel(index)"
-                            :class="modelKey === item.key ? 'text-[#16212A] font-semibold':''"
+                            :class="`${modelKey === item.key ? 'text-[#16212A] font-semibold':''} ${lan === 'zh' ? 'mr-[3.13vw]' : 'mr-[2.5vw]'}`"
                         >
-                            {{ item.name }}
+                            {{ lan === 'zh' ? item.name : item.name2 }}
                         </div>
                     </div>
                     <div class="flex justify-between w-[9.9vw]">
@@ -30,21 +33,21 @@
 
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
-import {getClientType} from '@/utils/utils.js'
-
+import {getClientType, getLang} from '@/utils/utils.js'
+const lan = ref(getLang())
 const isWeb = ref(getClientType() === 'web')
-const modelNmae = ref('世界模型')
+const modelNmae = ref(lan.value === 'zh' ? '世界模型' : 'World model')
 const modelKey = ref(0)
 const modelList = ref([
-    {name: '世界模型', key: 0},
-    {name: '俱身穿戴', key: 1},
-    {name: '仿人技能', key: 2},
-    {name: '类脑智能', key: 3},
+    {name: '世界模型',name2: 'World model',key: 0},
+    {name: '俱身穿戴',name2:  'Wearable technology',key: 1},
+    {name: '仿人技能',name2:  'Human-level skills',key: 2},
+    {name: '类脑智能',name2:  'Brain-inspired intelligent',key: 3},
 ])
 
 const handleChangeModel = (index: number) => {
     modelKey.value = index
-    modelNmae.value = modelList.value[index].name
+    modelNmae.value = lan.value === 'zh' ? modelList.value[index].name : modelList.value[index].name2
 }
 
 const handleChange = (val: string) => {
@@ -54,7 +57,7 @@ const handleChange = (val: string) => {
         modelKey.value = modelKey.value === 3 ? 3 : modelKey.value + 1
     }
     nextTick(() => {
-        modelNmae.value = modelList.value[modelKey.value].name
+        modelNmae.value = lan.value === 'zh' ? modelList.value[modelKey.value].name : modelList.value[modelKey.value].name2
     })
 }
 

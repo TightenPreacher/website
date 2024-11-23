@@ -8,42 +8,43 @@
                 class="cursor-pointer mr-[2.65vw] text-[#1F1F1F] font-normal relative" @mouseenter="handleLeave(item.key)"
               >
                 <div v-if="item.key === 'product'" role="button" tabindex="0" id="pro" @mousemove="(e:any)=>handlemove(e,'123')">
-                  {{ item.name }}
-                  <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] w-[7.81vw] font-normal">
+                  {{ lan === 'zh' ? item.name : item.name1 }}
+                  <ul tabindex="0" class="dow dropdown-content rounded-[0.52vw] z-[1] font-normal" :class="lan === 'zh' ? 'w-[7.81vw]' : 'w-[11.24vw]'">
                     <div class="w-full flex flex-col justify-center  px-[1.04vw] rounded-[0.52vw] bg-[rgba(0,0,0,0.3)] text-[rgba(255,255,255,0.6)] text-[0.94vw] h-[7.13vw]">
-                      <li @click="handleChangeMenu(1)" class="mb-[1.47vw] -mt-[0.3vw]"><a>技术产品</a></li>
-                      <li @click="handleChangeMenu(2)"><a>行业方案</a></li> 
+                      <li @click="handleChangeMenu(1)" class="mb-[1.47vw] -mt-[0.3vw]"><a>{{ lan === 'zh' ? '技术产品' : 'Technical Products'}}</a></li>
+                      <li @click="handleChangeMenu(2)"><a>{{ lan === 'zh' ? '行业方案' : 'Industry Solutions'}}</a></li> 
                     </div>
                   </ul>
                 </div>
-                {{ item.key === 'product' ? "" : item.name }}
+                {{ item.key === 'product' ? "" : (lan === 'zh' ? item.name : item.name1) }}
               </div>
               
             </div>
             <div class="flex justify-center">
-              <div class=" font-semibold">中文</div>
+              <div :class="lan === 'zh' ? 'font-semibold' : ''" @click="handleChangeLang('zh')">中文</div>
               ｜
-              <div>EN</div>
+              <div :class="lan === 'zh' ? '' : 'font-semibold'" @click="handleChangeLang('en')">EN</div>
             </div>
           </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref} from 'vue';
+import { ref } from 'vue';
+import { getLang } from '@/utils/utils'
 const props = defineProps({
     type: {
         type: String,
         required: true
     }
 })
-
+const lan = ref(getLang())
 const tabList = ref([
-  {name: '首页', key: 'home'},
-  {name: '产品', key: 'product'},
-  {name: '新闻', key: 'news'},
-  {name: '关于我们', key: 'about'},
-  {name: '联系我们', key: 'contact'},
+  {name: '首页', name1: 'Home',key: 'home'},
+  {name: '产品', name1: 'Production',key: 'product'},
+  {name: '新闻', name1: 'News',key: 'news'},
+  {name: '关于我们', name1: 'About Us',key: 'about'},
+  {name: '联系我们', name1: 'Contact',key: 'contact'},
 ])
 const tabName = ref(props.type)
 
@@ -71,6 +72,15 @@ const handleLeave = (val: string) => {
   he.focus()
 }
 
+const handleChangeLang = (val: string) => {
+  if (val === 'zh') {
+    localStorage.setItem('lang', 'zh')
+    window.location.reload()
+  } else {
+    localStorage.setItem('lang', 'en')
+    window.location.reload()
+  }
+}
 </script>
 
 <style scoped>

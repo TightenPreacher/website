@@ -2,8 +2,8 @@
     <div class="pt-[5.21vw] bg-cover bg-center" :class="isWeb ? 'h-[100vh]' : 'h-[46.88vw]'" :style="{ backgroundImage: `url(${home_bg3})` }">
         <div class="my-0 mx-auto w-[62.5vw] h-full relative flex flex-col ">
             <div class="w-full flex justify-between leading-[2.55vw] h-[3.07vw] text-[2.19vw] font-semibold">
-                <div class="text-[#16212A]">合作单位</div>
-                <div class="text-[#000000] opacity-20">Cooperative units</div>
+                <div class="text-[#16212A]">{{ lan === 'zh' ? "合作单位" : "Cooperative units"}}</div>
+                <div class="text-[#000000] opacity-20" v-if="lan === 'zh'">Cooperative units</div>
             </div>
             <div class="mt-[2.6vw] w-full h-[32.08vw] pt-[3.13vw] pb-[2.5vw] px-[4.17vw] bg-white flex flex-col justify-between rounded-[1.04vw] text-[black] font-semibold text-[1.46vw]">
                 <div class="flex justify-between text-center">
@@ -39,8 +39,8 @@ import unit5 from '@/assets/img/unit5.png'
 import unit6 from '@/assets/img/unit6.png'
 
 import { ref } from 'vue'
-import {getClientType} from '@/utils/utils.js'
-
+import {getClientType, getLang} from '@/utils/utils.js'
+const lan = ref(getLang())
 const isWeb = ref(getClientType() === 'web')
 const unitList = ref([
     { name: 'MIT', logo: unit1 },
