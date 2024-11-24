@@ -21,9 +21,9 @@
               
             </div>
             <div class="flex justify-center">
-              <div :class="lan === 'zh' ? 'font-semibold' : ''" @click="handleChangeLang('zh')">中文</div>
+              <div class="cursor-pointer" :class="lan === 'zh' ? 'font-semibold' : ''" @click="handleChangeLang('zh')">中文</div>
               ｜
-              <div :class="lan === 'zh' ? '' : 'font-semibold'" @click="handleChangeLang('en')">EN</div>
+              <div class="cursor-pointer" :class="lan === 'zh' ? '' : 'font-semibold'" @click="handleChangeLang('en')">EN</div>
             </div>
           </div>
     </div>
