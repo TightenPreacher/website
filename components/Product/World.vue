@@ -3,7 +3,7 @@
         <div class="text-center my-0 mx-auto w-[62.5vw] h-full relative ">
             <div class="text-[#030303] font-semibold text-[1.98vw] leading-[2.34vw] h-[2.76vw]">{{lan === 'zh' ? '世界模型' : 'World model'}}</div>
             <div class=" text-[1.04vw] font-normal text-[#1F1F1F]" :class="lan==='zh' ? 'mt-[1.56vw] leading-[2.08vw]' : 'mt-[1.04vw] leading-[1.67vw]'">
-                <div v-for="(item, index) in (lan === 'zh' ? modList : modList3)" :key="index">{{ item }}</div>
+                <div class="whitespace-pre-wrap" v-for="(item, index) in (lan === 'zh' ? modList : modList3)" :key="index">{{ item }}</div>
             </div>
             <div class="flex justify-between" :class="lan === 'zh' ? 'mt-[3.12vw]' : 'mt-[2.08vw]' ">
                 <div v-for="(item, index) in modList2" :key="index" class="w-[20.1vw]">
@@ -32,7 +32,7 @@ const modList = ref([
 
 const modList3 = ref([
     'The world model performs real-time collection and recording of dynamic events and interactive operations involving various 3D assets in the environment, including scenes, objects, people, and more.',
-    'Replay and augment data within the physics-based digital twin to achieve perception, understanding, and prediction of environmental dynamics.',
+    'Replay and augment data within the physics-based digital twin to achieve perception, understanding,\nand prediction of environmental dynamics.',
     'The world model not only accurately simulates and reflects the dynamics of the physical world but also predicts and adapts to future changes, providing users with a highly responsive and predictive platform.'
 ])
 

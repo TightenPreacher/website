@@ -14,8 +14,8 @@
                             <div class="text-[1.04vw] text-[#555555] font-normal h-[1.88vw] leading-[2.4vw]">{{ lan === 'zh' ? item.title : item.title2 }}</div>
                         </div>
                     </div>
-                    <div class="text-[1.04vw] mt-[2.08vw] text-[#555555] font-normal" :class="lan === 'zh' ? ' leading-[2.4vw]' : 'leading-[1.56vw]'">
-                        <div class="flex" v-for="(data, index) in (lan === 'zh' ? item.content : item.content2)" :key="index">
+                    <div class="text-[1.04vw] mt-[2.08vw] text-[#555555] font-normal" :class="`${lan === 'zh' ? ' leading-[2.4vw]' : 'leading-[1.56vw]'} ${lan !=='zh' && index === 0 ? 'h-[16.82vw] flex flex-col justify-between' : (lan !== 'zh' && index === 1 ? 'h-[12.45vw] flex flex-col justify-between' : '')}`">
+                        <div class="flex" v-for="(data, ind) in (lan === 'zh' ? item.content : item.content2)" :key="ind">
                             <div>·</div>
                             <div>{{ data }}</div>
                         </div>

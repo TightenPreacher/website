@@ -5,7 +5,7 @@
             <div class="flex justify-between mt-[2.6vw] w-full">
                 <div v-for="(item, index) in newList" @click="handleChangeTab(index)" :key="index" class="w-[15.05vw]">
                     <img class="h-[10.47vw] w-full" :src="lan !== 'zh' && index === 3 ? item.img2 : item.img" alt="姬器人科技" srcset="">
-                    <div class="flex flex-col p-[1.04vw] font-normal">
+                    <div class="flex flex-col p-[1.04vw] font-normal bg-[#F8F8F8] rounded-[1.04vw]">
                         <div class="font-semibold text-black h-[1.88vw] leading-[1.88vw] text-[1.25vw]">{{ lan === 'zh' ? item.title : item.title2 }}</div>
                         <div class="text-[#555555] mt-[1.04vw] leading-[1.88vw] text-[1.15vw] h-[5.57vw]">{{ lan === 'zh' ? item.content : item.content2 }}</div>
                         <div class="flex items-center justify-between text-[#ABABAB] leading-[1.88vw] mt-[1.04vw] mb-[0.52vw] text-[0.94vw] h-[1.56vw]">

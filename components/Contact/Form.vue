@@ -16,7 +16,7 @@
                 <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">{{lan === 'zh' ? '公司/机构/组织名称*' : 'Company/Organization/Institution Name*'}}</div>
                 <div class="mt-[0.52vw] w-full">
                     <input type="text" :placeholder="lan === 'zh' ? '公司名称不能超过50个字' : 'Limit of 100 words'"
-                        @input="(e: any) => handleChange('organization',e)" v-model="cooperation.organization" maxlength="50"
+                        @input="(e: any) => handleChange('organization',e)" v-model="cooperation.organization" :maxlength="lan === 'zh' ? 50 : 100"
                         class="input w-full h-[5.21vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw]" />
                         <div v-if="org" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">{{lan === 'zh' ? '请输入公司/机构/组织名称' : 'Please enter Company/Organization/Institution Name'}}</div>
                 </div>
@@ -24,8 +24,8 @@
             <div class="mt-[1.56vw] flex justify-between">
                 <div>
                     <div class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#555555]">{{lan ==='zh' ? '联系人姓名*' : 'Contact Person Name*'}}</div>
-                    <input type="text" :placeholder="lan === 'zh' ? '联系人不能超过15个字' : 'Limit of 15 words'"
-                        @input="(e: any) => handleChange('contacts',e)" v-model="cooperation.contacts" maxlength="15"
+                    <input type="text" :placeholder="lan === 'zh' ? '联系人不能超过15个字' : 'Limit of 100 words'"
+                        @input="(e: any) => handleChange('contacts',e)" v-model="cooperation.contacts" :maxlength="lan === 'zh' ? 15 : 100"
                         class="input h-[5.21vw] w-[20.31vw] rounded-[4.17vw] text-[1.25vw] pl-[1.56vw] mt-[0.52vw]" />
                         <div v-if="conta" class="h-[2.71vw] text-[1.25vw] leading-[2.71vw] font-normal text-[#ff5722]">{{lan === 'zh' ? '请输入联系人姓名' : 'Please enter contact person name'}}</div>
                 </div>
@@ -135,11 +135,17 @@ const handleFrom = () => {
     }
 
     if (org.value || conta.value || phone.value || email.value) return
-    if (cooperation.value.organization > 50) {
+    if (lan.value === 'zh' && cooperation.value.organization > 50) {
         cooperation.value.organization = cooperation.value.organization.substring(0, 50)
     }
-    if (cooperation.value.contacts > 15) {
+    if (lan.value !== 'zh' && cooperation.value.organization > 100) {
+        cooperation.value.organization = cooperation.value.organization.substring(0, 100)
+    }
+    if (lan.value === 'zh' && cooperation.value.contacts > 15) {
         cooperation.value.contacts = cooperation.value.contacts.substring(0, 15)
+    }
+    if (lan.value !== 'zh' && cooperation.value.contacts > 100) {
+        cooperation.value.contacts = cooperation.value.contacts.substring(0, 100)
     }
     nextTick(async() => {
         let res: any = await $fetch('/feishu', {

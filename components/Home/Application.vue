@@ -7,10 +7,10 @@
             </div>
             <div class="flex mt-[3.13vw]">
                 <img class="h-[27.29vw] w-[47.55vw] mr-[3.02vw]" @click="handleClick(modelKey)" :src="`/img/app${modelKey+1}.png`" alt="姬器人科技" srcset="">
-                <div class="text-[1.04vw] leading-[2.4vw]">
+                <div class="text-[1.04vw] leading-[2.4vw] -mt-[0.42vw]">
                     <div v-for="(item, index) in modelList" :key="index"
                         @click="handleChange(index)"
-                        :class="`${item.key === modelKey ? 'active text-[#080808] font-semibold':'text-[#8E8E8E] font-normal'} ${lan === 'zh' ? ' text-[1.46vw]' : 'text-[1.15vw]'} ${lan !== 'zh' && item.key === 0 ? 'mb-[2.6vw]' : ' mb-[3.23vw]'} ${lan !== 'zh' && item.key !== 0 ? 'h-[3.23vw] mb-[1.9vw]' : ' h-[1.88vw]'}`"
+                        :class="`${item.key === modelKey ? 'active text-[#080808] font-semibold':'text-[#8E8E8E] font-normal'} ${lan === 'zh' ? ' text-[1.46vw]' : 'text-[1.15vw]'} ${lan !== 'zh' ? item.cls : ''}`"
                         class="relative leading-[1.88vw] ml-[2.19vw] cursor-pointer"
                     >
                         {{ lan === 'zh' ? item.name : item.name2 }}
@@ -28,12 +28,12 @@ const lan = ref(getLang())
 const isWeb = ref(getClientType() === 'web')
 const modelKey = ref(0)
 const modelList = ref([
-    {name: '医疗看护', name2: 'Medical Care', key: 0},
-    {name: '康养陪护', name2: 'Elderly Care and Companion', key: 1},
-    {name: '居家陪护', name2: 'Home Care and Companion', key: 2},
-    {name: '情感陪互', name2: 'Emotional Companionship', key: 3},
-    {name: '情感陪伴', name2: 'Emotional Companionship', key: 4},
-    {name: '情感交互', name2: 'Emotional Interaction', key: 5},
+    {name: '医疗看护', name2: 'Medical Care', cls: 'mb-[2.6vw]', key: 0},
+    {name: '康养陪护', name2: 'Elderly Care and Companion', cls: 'mb-[1.98vw] h-[3.12vw]', key: 1},
+    {name: '居家陪护', name2: 'Home Care and Companion', cls: 'mb-[1.98vw] h-[3.12vw]', key: 2},
+    {name: '情感陪互', name2: 'Emotional Companionship', cls: 'mb-[1.98vw] h-[3.12vw]', key: 3},
+    {name: '情感陪伴', name2: 'Emotional Companionship', cls: 'mb-[1.98vw] h-[3.12vw]', key: 4},
+    {name: '情感交互', name2: 'Emotional Interaction', cls: 'mb-[1.98vw] h-[3.12vw]', key: 5},
 ])
 
 const handleChange = (index: number) => {
