@@ -15,8 +15,8 @@
                     </div>
                 </div>
             </div>
-            <div @click="handleChangeTab()" class="btnn mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center">
-                {{lan === 'zh' ? '更多' : 'more'}} >
+            <div @click="handleChangeTab()" class="btnn mt-[3.13vw] rounded-[3.13vw] bg-black h-[3.23vw] w-[9.17vw] text-[1.15vw] text-white font-normal cursor-pointer text-center flex items-center justify-center relative">
+                {{lan === 'zh' ? '更多' : 'more'}} <img class="w-[1.25vw] h-[1.25vw] absolute top-[0.99vw] right-[1.35vw]" src="@/assets/img/right.png" alt="">
             </div>
         </div>
     </div>
