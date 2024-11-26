@@ -18,6 +18,7 @@
                 <div class="mt-[1.04vw] text-[1.04vw] text-[#1F1F1F] font-normal leading-[1.98vw]">{{ lan === 'zh' ? item.content : item.content2 }}</div>    
                 <div class="mt-[0.83vw] text-[1.04vw] text-[#1F1F1F] font-normal leading-[1.98vw]" v-if="item.content3">{{ item.content3 }}</div>    
             </div>    
+            <div class="h-[46.88vw]"></div>
         </div>
     </div>
 </template>
