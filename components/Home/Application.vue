@@ -10,7 +10,7 @@
                 <div class="text-[1.04vw] leading-[2.4vw] -mt-[0.42vw]">
                     <div v-for="(item, index) in modelList" :key="index"
                         @click="handleChange(index)"
-                        :class="`${item.key === modelKey ? 'active text-[#080808] font-semibold':'text-[#8E8E8E] font-normal'} ${lan === 'zh' ? ' text-[1.46vw]' : 'text-[1.15vw]'} ${lan !== 'zh' ? item.cls : ''}`"
+                        :class="`${item.key === modelKey ? 'active text-[#080808] font-semibold':'text-[#8E8E8E] font-normal'} ${lan === 'zh' ? ' text-[1.46vw]' : 'text-[1.15vw]'} ${lan !== 'zh' ? item.cls : 'mb-[3.23vw]'}`"
                         class="relative leading-[1.88vw] ml-[2.19vw] cursor-pointer"
                     >
                         {{ lan === 'zh' ? item.name : item.name2 }}
