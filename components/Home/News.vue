@@ -32,13 +32,14 @@ import new11 from '@/assets/img/new11.png'
 import new22 from '@/assets/img/new22.png'
 import new33 from '@/assets/img/new33.png'
 import new44 from '@/assets/img/new44.png'
-import new55 from '@/assets/img/new55.png'
+// import new55 from '@/assets/img/new55.png'
+import new66 from '@/assets/img/new66.png'
 
 const newList = ref([
     {title: '姬器人创始人  CTO...', title2: 'Dr. Xu Wenqiang...', content: '2024年6月29日，由哈佛大学无锡校友会举办的 AIEC人工智能与俱身...', content2: 'On June 29, 2024, at the AIEC Artificial Intelligence and ...',time: '2024-06-29', img: new11},
     {title: '姬器人创始人  CTO...', title2: 'Dr. Xu Wenqiang...', content: '2024年10月11日，1苏州市太仓市委常委、组织部部长、苏州市人社局...', content2: 'On October 11, 2024, a delegation from Taicang, including the...',time: '2024-10-11', img: new22},
-    {title: '姬器人创始人  CTO...', title2: 'Lu Shuqiang...', content: '2024年10月26日，创始人卢树强受邀参加出席由声网科技主办的 声网...', content2: 'On October 26, 2024, Founder Lu Shuqiang was invited to attend...',time: '2024-10-26', img: new33},
-    {title: '敬请期待...', title2: 'Coming soon...', content: '更多新闻资讯内容', content2: 'More news and information content',time: '--', img: new44, img2: new55}
+    {title: '姬器人创始人 CEO...', title2: 'Lu Shuqiang...', content: '2024年10月26日，创始人卢树强受邀参加出席由声网科技主办的 声网...', content2: 'On October 26, 2024, Founder Lu Shuqiang was invited to attend...',time: '2024-10-26', img: new33},
+    {title: '姬器人创始人 CEO...', title2: 'Founder and CEO...', content: '2024年11月24日，创始人卢树强受邀参加由U8世界创新峰会，创新改变...', content2: 'On November 24, 2024, founder Lu Shuqiang was invited to ...',time: '2024-11-24', img: new66, img2: new66}
 ])
 
 const handleChangeTab = (index?: number) => {
