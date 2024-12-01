@@ -17,8 +17,16 @@ const contentRef = ref(null);
 
 const handleScroll = () => {
     if (contentRef.value) {
-        const scrollTop = contentRef.value.scrollTop;
-        if (scrollTop > (window.innerHeight)*2) {
+        const scrollTop = contentRef.value.scrollTop; // 当前滚动位置
+        const scrollHeight = contentRef.value.scrollHeight; // 内容的总高度
+        const clientHeight = contentRef.value.clientHeight; // 容器的可见高度
+
+        // 判断是否到达底部
+        let val = scrollTop + clientHeight >= (scrollHeight - (window.innerWidth / 100 * 20));
+        
+        
+        // const scrollTop = contentRef.value.scrollTop;
+        if (scrollTop > (window.innerHeight)*2 && !val) {
             $eventBus.emit('scroll', true);
         } else {
             $eventBus.emit('scroll', false);
